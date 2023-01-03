@@ -48,7 +48,7 @@
     transition: background-size 300ms ease;
   }
 
-  .underline-gradient:hover:active  {
+  .underline-gradient:hover  {
     background-size: 100% 3px;
   }
 
