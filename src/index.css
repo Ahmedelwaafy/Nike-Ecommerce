@@ -38,4 +38,18 @@
     height: 100vw;
     width: 100vw;
   }
+
+  .underline-gradient {
+   background: linear-gradient(94deg, rgba(9,57,89,1) 0%, rgba(183,226,247,1) 100%);
+
+    background-size: 0% 3px;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    transition: background-size 300ms ease;
+  }
+
+  .underline-gradient:hover:active  {
+    background-size: 100% 3px;
+  }
+
 }
