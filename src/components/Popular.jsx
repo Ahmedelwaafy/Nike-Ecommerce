@@ -11,7 +11,6 @@ useEffect(() => {
 }, []);
    
 console.log(top);
-const ff = top
 
 const color =
   "radial-gradient(circle, rgba(9,160,89,1) 0%, rgba(183,226,247,1) 100%)";
