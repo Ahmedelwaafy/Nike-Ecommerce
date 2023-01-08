@@ -1,9 +1,8 @@
 import { useState } from "react";
 
 function Hero() {
-
-    const [show, setShow] = useState(false);
-    const [src, setSrc] = useState("");
+  const [show, setShow] = useState(false);
+  const [src, setSrc] = useState("");
 
   return (
     <section id="hero" className="h-[100vh] ">
@@ -18,7 +17,7 @@ function Hero() {
             <span className=" font-bold pb-3 text-5xl text-transparent bg-clip-text bg-text italic sm:bg-sm-text sm:hidden">
               361° <br />
             </span>
-            <h1 className=" md:text-3xl text-4xl  font-Anton mt-3 italic ">
+            <h1 className="  md:text-3xl text-4xl  font-Anton mt-3 italic ">
               Nike Air Max Pro Sneakers Dynamic Fit.
             </h1>
             <h3 className="bg-bg font-Anton italic leading-[50px]  md:text-3xl text-4xl mt-2  mr-20 lg:mr-12 md:mr-7 sm:hidden  ">
@@ -38,7 +37,7 @@ function Hero() {
           <div className="flex gap-8 items-center md:mt-0 my-3 sm:my-3 ">
             <a
               href="#hero"
-              className="bg-blue text-grey font-bold px-7 py-3 sm:text-sm sm:px-5 "
+              className="bg-blue text-grey font-bold px-7 py-3 sm:text-sm sm:px-5 rounded-sm active:scale-90 transition-all duration-100 ease-in-out hover:bg-hover shadow-sm  shadow-blue "
             >
               Add To Bag
             </a>
@@ -63,13 +62,13 @@ function Hero() {
 
           <div className="  flex flex-col items-center  sm:hover:rotate-0 hover:rotate-[62deg] transition duration-700 mr-[60px]   ">
             <img
-              className=" z-[-1] sm:hidden -rotate-[17deg] pointer-events-none "
+              className=" z-[-1] sm:hidden -rotate-[17deg]  cursor-pointer "
               src="../assets/hero.svg"
               alt="hero"
             />
             <img
-              className=" z-[-1] sm:block hidden pointer-events-none "
-              src="../assets/hero-small.svg"
+              className=" z-[-1] sm:block hidden  cursor-pointer"
+              src="../assets/hero small.svg"
               alt="hero"
             />
             {/**Videos */}
@@ -78,7 +77,7 @@ function Hero() {
 
               <div className="relative overflow-hidden group cursor-pointer transition-all duration-300">
                 <img
-                  className="absolute sm:top-[26.6%] sm:right-[32.5%] asm:top-[26.6%] asm:right-[37.5%] top-[32.6%] right-[37.5%] z-10 sm:rotate-180 "
+                  className="absolute sm:top-[26.6%] sm:right-[32.5%] asm:top-[26.6%] asm:right-[37.5%] top-[32.6%] right-[37.5%] z-10 sm:rotate-180 active:scale-100 transition-all duration-100 ease-in-out hover:scale-90 "
                   src="../assets/play-icon-grey.svg"
                   alt="play-icon"
                   onClick={() => {
@@ -94,11 +93,11 @@ function Hero() {
                 />
                 <video
                   src="../assets/video/clip-1.mp4"
-                  autoPlay="true"
-                  loop="true"
-                  muted="true"
+                  autoPlay={true}
+                  loop={true}
+                  muted={true}
                   type="video/mp4"
-                  className="absolute right-0 top-0 left-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 rounded-md rotate-180 sm:rotate-0  "
+                  className="absolute right-0 top-0 left-0 w-full h-full object-cover opacity-0 grouhp-hover:opacity-100 rounded-md rotate-180 sm:rotate-0  "
                 />
               </div>
 
@@ -106,7 +105,7 @@ function Hero() {
 
               <div className="relative overflow-hidden group cursor-pointer transition-all duration-300">
                 <img
-                  className="absolute sm:top-[26.6%] sm:right-[32.5%] asm:top-[26.6%] asm:right-[37.5%] top-[32.6%] right-[37.5%] z-10 sm:rotate-180 "
+                  className="absolute sm:top-[26.6%] sm:right-[32.5%] asm:top-[26.6%] asm:right-[37.5%] top-[32.6%] right-[37.5%] z-10 sm:rotate-180 active:scale-100 transition-all duration-100 ease-in-out hover:scale-90"
                   src="../assets/play-icon-blue.svg"
                   alt="play-icon"
                   onClick={() => {
@@ -122,9 +121,9 @@ function Hero() {
                 />
                 <video
                   src="../assets/video/clip-2.mp4"
-                  autoPlay="true"
-                  loop="true"
-                  muted="true"
+                  autoPlay={true}
+                  loop={true}
+                  muted={true}
                   type="video/mp4"
                   className="absolute right-0 top-0 left-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 rounded-md rotate-180 sm:rotate-0 "
                 />
@@ -134,7 +133,7 @@ function Hero() {
 
               <div className="relative overflow-hidden group cursor-pointer transition-all duration-300">
                 <img
-                  className="absolute sm:top-[26.6%] sm:right-[32.5%] asm:top-[26.6%] asm:right-[37.5%] top-[32.6%] right-[37.5%] z-10 sm:rotate-180 "
+                  className="absolute sm:top-[26.6%] sm:right-[32.5%] asm:top-[26.6%] asm:right-[37.5%] top-[32.6%] right-[37.5%] z-10 sm:rotate-180 active:scale-100 transition-all duration-100 ease-in-out hover:scale-90 "
                   src="../assets/play-icon-green.svg"
                   alt="play-icon"
                   onClick={() => {
@@ -150,9 +149,9 @@ function Hero() {
                 />
                 <video
                   src="../assets/video/clip-3.mp4"
-                  autoPlay="true"
-                  loop="true"
-                  muted="true"
+                  autoPlay={true}
+                  loop={true}
+                  muted={true}
                   type="video/mp4"
                   className="absolute right-0 top-0 left-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 rounded-md rotate-180 sm:rotate-0 "
                 />
@@ -175,7 +174,6 @@ function Hero() {
               preload="auto"
               width="640"
               height="264"
-              poster=""
             />
           </div>
         )}
