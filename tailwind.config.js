@@ -6,7 +6,7 @@ module.exports = {
       fontFamily: {
         Anton: ["Anton", "sans-serif"],
       },
-     
+
       backgroundImage: (theme) => ({
         grad: "linear-gradient(25deg, rgba(231,235,239,1) 0%, rgba(183,226,247,1) 100%)",
         text: "radial-gradient(circle, rgba(168,251,1,1) 0%, rgba(183,226,247,1) 100%)",
@@ -21,11 +21,10 @@ module.exports = {
         white: "#FFFFFF",
         blue: "#093959 ",
         green: "#a8fb01 ",
-       
+        hover: "#152848 ",
       },
     },
     screens: {
-      
       xl: { max: "1500px" },
       lg: { max: "1200px" },
       md: { max: "1060px" },

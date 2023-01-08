@@ -1,12 +1,26 @@
-function Popular() {
+import { useState, useEffect } from "react";
+
+
+function Popular({top}) {
+useEffect(() => {
   fetch(process.env.REACT_APP_URL)
     .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-    })
+    .then((data) => data)
     .catch((error) => console.error(error));
+
+}, []);
+   
+console.log(top);
+const ff = top
+
 const color =
   "radial-gradient(circle, rgba(9,160,89,1) 0%, rgba(183,226,247,1) 100%)";
+  
+  
+  
+  
+  
+  
   return (
     <div
      style={{background: `${color}`}

@@ -1,14 +1,15 @@
-import Hero from "./components/Hero";
-import Navbar from "./components/Navbar";
-import Popular from "./components/Popular";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import Wrapper from "./components/Wrapper";
+
 
 function App() {
+  const client = new QueryClient();
   return (
-    <div>
-      <Navbar />
-      <Hero />
-      <Popular />
-    </div>
+    <QueryClientProvider client={client}>
+      <div>
+        <Wrapper />
+      </div>
+    </QueryClientProvider>
   );
 }
 

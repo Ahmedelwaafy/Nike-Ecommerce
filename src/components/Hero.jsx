@@ -97,7 +97,7 @@ function Hero() {
                   loop={true}
                   muted={true}
                   type="video/mp4"
-                  className="absolute right-0 top-0 left-0 w-full h-full object-cover opacity-0 grouhp-hover:opacity-100 rounded-md rotate-180 sm:rotate-0  "
+                  className="absolute right-0 top-0 left-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 rounded-md rotate-180 sm:rotate-0  "
                 />
               </div>
 
