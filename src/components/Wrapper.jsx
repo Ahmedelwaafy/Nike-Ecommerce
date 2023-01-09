@@ -17,7 +17,7 @@ function Wrapper() {
   const [collections, setCollections] = useState([]);
   const [covers, setCovers] = useState([]);
 
-  const { data, isLoading, isError } = useQuery(["shoes"], async () => {
+  const { data, isLoading, isError, error } = useQuery(["shoes"], async () => {
     const res = await axios.get(process.env.REACT_APP_URL);
     const { popular, top, men, women, kids, collections, covers } = res.data;
     setPopular(popular);
@@ -30,16 +30,26 @@ function Wrapper() {
 
     return res.data;
   });
+ 
 
   return (
     <div>
       <Navbar />
+     
+      <main className="flex flex-col gap-16 ">
+
       <Hero />
-      <Popular top={top} />
-      <ProductsWrapper popular={popular} />
+      <ProductsWrapper
+        endpoint={popular}
+        pop
+        isLoading={isLoading}
+        isError={isError}
+        error={error}
+      />
       <ContentWrapper />
-      <ProductsWrapper top={top} />
+      <ProductsWrapper endpoint={top} />
       <ContentWrapper />
+      </main>
     </div>
   );
 }
