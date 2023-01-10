@@ -4,9 +4,8 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import Hero from "./Hero";
 import Navbar from "./Navbar";
-import Popular from "./Popular";
+import Highlights from "./Highlights";
 import ProductsWrapper from "./ProductsWrapper";
-import ContentWrapper from "./ContentWrapper";
 
 function Wrapper() {
   const [popular, setPopular] = useState([]);
@@ -35,20 +34,23 @@ function Wrapper() {
   return (
     <div>
       <Navbar />
-     
-      <main className="flex flex-col gap-16 ">
 
-      <Hero />
-      <ProductsWrapper
-        endpoint={popular}
-        pop
-        isLoading={isLoading}
-        isError={isError}
-        error={error}
-      />
-      <ContentWrapper />
-      <ProductsWrapper endpoint={top} />
-      <ContentWrapper />
+      <main className="flex flex-col gap-24 ">
+        <Hero />
+        <ProductsWrapper
+          endpoint={popular}
+          pop
+          isLoading={isLoading}
+          isError={isError}
+          error={error}
+        />
+        <Highlights />
+        <ProductsWrapper
+          endpoint={top}
+          isLoading={isLoading}
+          isError={isError}
+          error={error}
+        />
       </main>
     </div>
   );

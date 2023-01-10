@@ -22,6 +22,8 @@ module.exports = {
         cblue: "#093959 ",
         cgreen: "#a8fb01 ",
         hover: "#152848 ",
+        brown: "#9B6143 ",
+        "light-brown": "#C1B0A8 ",
       },
     },
     screens: {
