@@ -15,12 +15,12 @@ module.exports = {
       }),
 
       colors: {
-        grey: "#EDF3F8",
-        sky: "#B7E2F7",
+        cgray: "#EDF3F8",
+        csky: "#B7E2F7",
         black: "#000000",
         white: "#FFFFFF",
-        blue: "#093959 ",
-        green: "#a8fb01 ",
+        cblue: "#093959 ",
+        cgreen: "#a8fb01 ",
         hover: "#152848 ",
       },
     },

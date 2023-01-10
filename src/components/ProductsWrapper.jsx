@@ -2,6 +2,7 @@ import Item from "./Utility Components/Item";
 import Loader from "./Utility Components/Loader";
 
 function ProductsWrapper({ pop, endpoint, isLoading, isError, error }) {
+ 
   if (isLoading) {
     return <Loader />
   }
@@ -14,18 +15,18 @@ function ProductsWrapper({ pop, endpoint, isLoading, isError, error }) {
     );
   }
   return (
-    <div>
-      <h2>{pop ? "Popular Sales" : "Top Rated"}</h2>
+    <div className="w-11/12 mx-auto">
+      <h2 className="text-4xl font-bold sm:text-3xl sm:text-center">{pop ? "Popular Sales" : "Top Rated"}</h2>
 
       <div
-        className={`grid items-center justify-items-center mt-7 gap-7 lg:gap-5 ${
+        className={`grid items-center justify-items-center mt-7 gap-7  ${
           pop
-            ? "grid-cols-3 md:grid-cols-2 sm:grid-cols-1"
+            ? "grid-cols-3 lg:grid-cols-2 sm:grid-cols-1 gap-10"
             : "grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1"
         }`}
       >
         {endpoint.map((item) => (
-          <Item item={item} key={item.id} />
+          <Item  pop={pop} item={item} key={item.id} />
         ))}
       </div>
     </div>

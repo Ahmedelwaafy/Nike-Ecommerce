@@ -7,7 +7,7 @@ function Hero() {
   return (
     <section id="hero" className="h-[100vh] ">
       {/**Clip Path */}
-      <div className="top-0 absolute bg-sky z-[-1] clip-path  w-full h-full"></div>
+      <div className="top-0 absolute bg-csky z-[-1] clip-path  w-full h-full"></div>
 
       {/**Actual Content*/}
       <div className=" asm:pt-0 py-8 my-[78px] w-5/6 mx-auto flex sm:flex-col justify-between ">
@@ -37,7 +37,7 @@ function Hero() {
           <div className="flex gap-8 items-center md:mt-0 my-3 sm:my-3 ">
             <a
               href="#hero"
-              className="bg-blue text-grey font-bold px-7 py-3 sm:text-sm sm:px-5 rounded-sm active:scale-90 transition-all duration-100 ease-in-out hover:bg-hover shadow-sm  shadow-blue "
+              className="bg-cblue text-cgray font-bold px-7 py-3 sm:text-sm sm:px-5 rounded-sm active:scale-90 transition-all duration-100 ease-in-out hover:bg-hover shadow-sm  shadow-cblue "
             >
               Add To Bag
             </a>
