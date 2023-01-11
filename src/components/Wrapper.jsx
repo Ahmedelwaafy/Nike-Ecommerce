@@ -2,10 +2,12 @@ import { useState } from "react";
 
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import Hero from "./Hero";
 import Navbar from "./Navbar";
-import Highlights from "./Highlights";
+import Hero from "./Hero";
 import ProductsWrapper from "./ProductsWrapper";
+import Highlights from "./Highlights";
+import Featured from "./Featured";
+import Stories from "./Stories";
 
 function Wrapper() {
   const [popular, setPopular] = useState([]);
@@ -51,6 +53,8 @@ function Wrapper() {
           isError={isError}
           error={error}
         />
+        <Featured />
+        <Stories />
       </main>
     </div>
   );

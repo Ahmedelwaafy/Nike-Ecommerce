@@ -24,6 +24,9 @@ module.exports = {
         hover: "#152848 ",
         brown: "#9B6143 ",
         "light-brown": "#C1B0A8 ",
+        cred: "#FE4E47 ",
+        cblack: "#151616 ",
+        dgray: "#5B5D61 ",
       },
     },
     screens: {
