@@ -54,7 +54,7 @@ function Hero() {
               alt=""
             />
             <img
-              className="z-[-1] opacity-[7%] sm:block hidden"
+              className="z-[-1] opacity-[7%] sm:block ss:w-5/6 hidden"
               src="../assets/Just-Do-It-h.png"
               alt=""
             />
