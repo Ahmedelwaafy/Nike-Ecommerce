@@ -8,6 +8,7 @@ import ProductsWrapper from "./ProductsWrapper";
 import Highlights from "./Highlights";
 import Featured from "./Featured";
 import Stories from "./Stories";
+import Footer from "./Footer";
 
 function Wrapper() {
   const [popular, setPopular] = useState([]);
@@ -17,10 +18,12 @@ function Wrapper() {
   const [kids, setKids] = useState([]);
   const [collections, setCollections] = useState([]);
   const [covers, setCovers] = useState([]);
+  const [stories, setStories] = useState([]);
 
   const { data, isLoading, isError, error } = useQuery(["shoes"], async () => {
     const res = await axios.get(process.env.REACT_APP_URL);
-    const { popular, top, men, women, kids, collections, covers } = res.data;
+    const { popular, top, men, women, kids, collections, covers, Stories } =
+      res.data;
     setPopular(popular);
     setTop(top);
     setMen(men);
@@ -28,6 +31,7 @@ function Wrapper() {
     setKids(kids);
     setCollections(collections);
     setCovers(covers);
+    setStories(Stories);
 
     return res.data;
   });
@@ -54,8 +58,14 @@ function Wrapper() {
           error={error}
         />
         <Featured />
-        <Stories />
+        <Stories
+          stories={stories}
+          isLoading={isLoading}
+          isError={isError}
+          error={error}
+        />
       </main>
+      <Footer />
     </div>
   );
 }
