@@ -1,7 +1,7 @@
 
 function Footer() {
   return (
-    <footer className="mt-24 py-7  bg-csky  ">
+    <footer className="mt-24 py-10  bg-csky  ">
       <div className="w-5/6 mx-auto flex  ss:flex-col gap-10 justify-around">
         <div className="text-center">
           <h3 className=" mb-3 font-bold text-lg">ABOUT NIKE</h3>

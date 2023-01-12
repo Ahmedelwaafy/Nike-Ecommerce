@@ -41,7 +41,7 @@ function Hero() {
             >
               Add To Bag
             </a>
-            <p className="  font-bold ">$19.99</p>
+            <p className="  font-bold ">$149.99</p>
           </div>
         </div>
 

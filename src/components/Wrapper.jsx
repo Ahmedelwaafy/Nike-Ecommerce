@@ -9,7 +9,7 @@ import Highlights from "./Highlights";
 import Featured from "./Featured";
 import Stories from "./Stories";
 import Footer from "./Footer";
-
+import { Routes, Route, useNavigate } from "react-router-dom"; 
 function Wrapper() {
   const [popular, setPopular] = useState([]);
   const [top, setTop] = useState([]);
@@ -20,25 +20,36 @@ function Wrapper() {
   const [covers, setCovers] = useState([]);
   const [stories, setStories] = useState([]);
 
-  const { data, isLoading, isError, error } = useQuery(["shoes"], async () => {
-    const res = await axios.get(process.env.REACT_APP_URL);
-    const { popular, top, men, women, kids, collections, covers, Stories } =
-      res.data;
-    setPopular(popular);
-    setTop(top);
-    setMen(men);
-    setWomen(women);
-    setKids(kids);
-    setCollections(collections);
-    setCovers(covers);
-    setStories(Stories);
-
-    return res.data;
-  });
+  const { data, isLoading, isError, error } = useQuery(
+    ["shoes"],
+    async () => {
+      const res = await axios.get(process.env.REACT_APP_URL);
+      return res.data;
+    },
+    {
+      cacheTime: 300000,
+      refetchOnMount: false,
+      refetchOnWindowFocus: false,
+      onSuccess: (data) => {
+        const { popular, top, men, women, kids, collections, covers, Stories } =
+          data;
+        setPopular(popular);
+        setTop(top);
+        setMen(men);
+        setWomen(women);
+        setKids(kids);
+        setCollections(collections);
+        setCovers(covers);
+        setStories(Stories);
+      },
+      //staleTime: Infinity,
+     // keepPreviousData: true,
+    }
+  );
  
 
   return (
-    <div>
+    <div >
       <Navbar />
 
       <main className="flex flex-col gap-24 ">

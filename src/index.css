@@ -16,8 +16,11 @@
 
   body {
     background-color: #edf3f8;
+    
   }
-
+html {
+  scroll-behavior: smooth;
+}
   /* Blur-Effect */
   .blur {
     background: rgba(168, 251, 1, 0.5);
