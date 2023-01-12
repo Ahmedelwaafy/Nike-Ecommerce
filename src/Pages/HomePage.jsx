@@ -2,15 +2,12 @@ import { useState } from "react";
 
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import Navbar from "./Navbar";
-import Hero from "./Hero";
-import ProductsWrapper from "./ProductsWrapper";
-import Highlights from "./Highlights";
-import Featured from "./Featured";
-import Stories from "./Stories";
-import Footer from "./Footer";
-import { Routes, Route, useNavigate } from "react-router-dom"; 
-function Wrapper() {
+import Hero from "../components/Hero";
+import ProductsWrapper from "../components/ProductsWrapper";
+import Highlights from "../components/Highlights";
+import Featured from "../components/Featured";
+import Stories from "../components/Stories";
+function HomePage() {
   const [popular, setPopular] = useState([]);
   const [top, setTop] = useState([]);
   const [men, setMen] = useState([]);
@@ -43,42 +40,36 @@ function Wrapper() {
         setStories(Stories);
       },
       //staleTime: Infinity,
-     // keepPreviousData: true,
+      // keepPreviousData: true,
     }
   );
- 
 
   return (
-    <div >
-      <Navbar />
-
-      <main className="flex flex-col gap-24 ">
-        <Hero />
-        <ProductsWrapper
-          endpoint={popular}
-          pop
-          isLoading={isLoading}
-          isError={isError}
-          error={error}
-        />
-        <Highlights />
-        <ProductsWrapper
-          endpoint={top}
-          isLoading={isLoading}
-          isError={isError}
-          error={error}
-        />
-        <Featured />
-        <Stories
-          stories={stories}
-          isLoading={isLoading}
-          isError={isError}
-          error={error}
-        />
-      </main>
-      <Footer />
-    </div>
+    <main className="flex flex-col gap-24 ">
+      <Hero />
+      <ProductsWrapper
+        endpoint={popular}
+        pop
+        isLoading={isLoading}
+        isError={isError}
+        error={error}
+      />
+      <Highlights />
+      <ProductsWrapper
+        endpoint={top}
+        isLoading={isLoading}
+        isError={isError}
+        error={error}
+      />
+      <Featured />
+      <Stories
+        stories={stories}
+        isLoading={isLoading}
+        isError={isError}
+        error={error}
+      />
+    </main>
   );
 }
 
-export default Wrapper;
+export default HomePage;

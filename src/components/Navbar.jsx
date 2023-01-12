@@ -17,7 +17,7 @@ function Navbar() {
   const toggleStyle = toggle ? "sm:block" : "";
 
   return (
-    <nav className=" w-full fixed top-0 py-6 z-40 ">
+    <nav  className=" w-full fixed top-0 py-6 z-40 ">
       <div
         className={` ${navBackground} absolute transition duration-500 top-0  z-[-1]  w-full h-[78px]`}
       ></div>
