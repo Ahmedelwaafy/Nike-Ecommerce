@@ -67,6 +67,16 @@ backdrop-filter: blur(10px);
     background-size: 100% 3px;
   }
 
+   /**NavLink active class*/
+  .active {
+   background: linear-gradient(94deg, rgba(9,57,89,1) 0%, rgba(183,226,247,1) 100%);
+
+    background-size: 100% 3px;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    
+  }
+
   /**loader*/
  .loader {
   position: relative;

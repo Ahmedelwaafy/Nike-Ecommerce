@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 
 function Navbar() {
   const [scroll, setScroll] = useState(false);
@@ -15,9 +16,16 @@ function Navbar() {
   }, []);
   const navBackground = scroll ? "blur" : "";
   const toggleStyle = toggle ? "sm:block" : "";
+  const activeLink = ({ isActive }) => ({
+    background: isActive? 
+      "linear-gradient(94deg, rgba(9,57,89,1) 0%, rgba(183,226,247,1) 100%)" : "",
+    backgroundSize: isActive?  "100% 3px" : "",
+    backgroundRepeat:  isActive? "no-repeat" : "",
+    backgroundPosition: isActive?  "left bottom" : "",
+  });
 
   return (
-    <nav  className=" w-full fixed top-0 py-6 z-40 ">
+    <nav className=" w-full fixed top-0 py-6 z-40 ">
       <div
         className={` ${navBackground} absolute transition duration-500 top-0  z-[-1]  w-full h-[78px]`}
       ></div>
@@ -31,41 +39,50 @@ function Navbar() {
         {/** 2-Desktop Menu */}
         <ul className="  sm:hidden flex justify-between items-center gap-12 text-sm font-DMSans font-semibold  ">
           <li>
-            <a
+            <NavLink
               className="underline-gradient "
-              href="https://www.behance.net/ahmedelwaafy"
+              to="/"
+              style={activeLink}
             >
-              {" "}
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className="underline-gradient  "
+              to="/women"
+              style={activeLink}
+            >
               Women
-            </a>
+            </NavLink>
           </li>
 
           <li>
-            <a
+            <NavLink
               className="underline-gradient "
-              href="https://www.behance.net/ahmedelwaafy"
+              to="/men"
+              style={activeLink}
             >
-              {" "}
-              Men{" "}
-            </a>
+              Men
+            </NavLink>
           </li>
           <li>
-            <a
+            <NavLink
               className="underline-gradient "
-              href="https://www.behance.net/ahmedelwaafy"
+              to="/kids"
+              style={activeLink}
             >
-              {" "}
-              Kids{" "}
-            </a>
+              Kids
+            </NavLink>
           </li>
           <li>
-            <a
+            <NavLink
               className="underline-gradient "
-              href="https://www.behance.net/ahmedelwaafy"
+              to="Collections"
+              style={activeLink}
             >
-              {" "}
-              Collections{" "}
-            </a>
+              Collections
+            </NavLink>
           </li>
         </ul>
         {/** 2-Mobile Menu */}
