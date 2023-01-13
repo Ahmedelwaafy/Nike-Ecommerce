@@ -24,20 +24,21 @@ function HomePage() {
       return res.data;
     },
     {
-      cacheTime: 300000,
+      cacheTime: 300,
       refetchOnMount: false,
       refetchOnWindowFocus: false,
       onSuccess: (data) => {
-        const { popular, top, men, women, kids, collections, covers, Stories } =
-          data;
-        setPopular(popular);
-        setTop(top);
-        setMen(men);
-        setWomen(women);
-        setKids(kids);
-        setCollections(collections);
-        setCovers(covers);
-        setStories(Stories);
+        
+      const { popular, top, men, women, kids, collections, covers, Stories } =
+        data;
+      setPopular(popular);
+      setTop(top);
+      setMen(men);
+      setWomen(women);
+      setKids(kids);
+      setCollections(collections);
+      setCovers(covers);
+      setStories(Stories);
       },
       //staleTime: Infinity,
       // keepPreviousData: true,

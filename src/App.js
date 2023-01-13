@@ -2,6 +2,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import HomePage from "./Pages/HomePage";
 import PagesWrapper from "./Pages/PagesWrapper";
 import Layout from "./components/Utility Components/Layout";
+import Missing from "./components/Utility Components/Missing";
+import UnderConstruction from "./components/Utility Components/UnderConstruction";
 import {
   BrowserRouter as Router,
   Routes,
@@ -33,7 +35,10 @@ const collections ="collections"
               path="/collections"
               element={<PagesWrapper page={collections} />}
             />
+            <Route path="/underconstruction" element={<UnderConstruction />} />
           </Route>
+
+          <Route path="*" element={<Missing />} />
         </Routes>
       </Router>
     </QueryClientProvider>

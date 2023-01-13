@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@lottiefiles/react-lottie-player": "^3.5.0",
     "@reduxjs/toolkit": "^1.9.1",
     "@tanstack/react-query": "^4.20.9",
     "axios": "^1.2.1",

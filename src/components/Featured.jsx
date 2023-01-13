@@ -1,5 +1,8 @@
+import { useNavigate } from "react-router-dom";
 
 function Featured() {
+    const navigate = useNavigate();
+
   return (
     <section className="w-5/6 mx-auto flex gap-64 lg:gap-36 md:gap-20 mt-7  items-center sm:flex-col ">
       <div className="w-3/5 md:w-1/2 sm:w-full flex-col items-end  sm:items-center sm:text-center">
@@ -14,7 +17,10 @@ function Featured() {
           overlays, clean finishes and the perfect amount of flash to make you
           shine.
         </p>
-        <button className="text-cgray bg-cred px-3  py-2 rounded-sm active:scale-90 transition-all duration-100 ease-in-out hover:bg-cblack  shadow-sm  shadow-cred hover:shadow-cblack  md:text-sm">
+        <button
+          className="text-cgray bg-cred px-3  py-2 rounded-sm active:scale-90 transition-all duration-100 ease-in-out hover:bg-cblack  shadow-sm  shadow-cred hover:shadow-cblack  md:text-sm"
+          onClick={() => navigate("/collections")}
+        >
           Explore More
         </button>
       </div>
@@ -27,4 +33,4 @@ function Featured() {
   );
 }
 
-export default Featured
+export default Featured;

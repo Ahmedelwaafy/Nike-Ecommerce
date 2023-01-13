@@ -1,5 +1,8 @@
-
+import { useNavigate } from "react-router-dom";
+ 
 function Footer() {
+      const navigate = useNavigate();
+
   return (
     <footer className="mt-24 py-10  bg-csky  ">
       <div className="w-5/6 mx-auto flex  ss:flex-col gap-10 justify-around">
@@ -7,29 +10,29 @@ function Footer() {
           <h3 className=" mb-3 font-bold text-lg">ABOUT NIKE</h3>
           <ul className="leading-10">
             <li>
-              <a target="_blank" rel="noreferrer" href="https://www.nike.com/">
+              <button  onClick={() => navigate("/underconstruction")}>
                 News
-              </a>
+              </button>
             </li>
             <li>
-              <a target="_blank" rel="noreferrer" href="https://www.nike.com/">
+              <button  onClick={() => navigate("/underconstruction")}>
                 Sustainability
-              </a>
+              </button>
             </li>
             <li>
-              <a target="_blank" rel="noreferrer" href="https://www.nike.com/">
+              <button  onClick={() => navigate("/underconstruction")}>
                 Careers
-              </a>
+              </button>
             </li>
             <li>
-              <a target="_blank" rel="noreferrer" href="https://www.nike.com/">
+              <button  onClick={() => navigate("/underconstruction")}>
                 Investors
-              </a>
+              </button>
             </li>
             <li>
-              <a target="_blank" rel="noreferrer" href="https://www.nike.com/">
+              <button  onClick={() => navigate("/underconstruction")}>
                 Prupose
-              </a>
+              </button>
             </li>
           </ul>
         </div>
@@ -38,29 +41,29 @@ function Footer() {
           <h3 className=" mb-3 font-bold text-lg">GET HELP</h3>
           <ul className="leading-10">
             <li>
-              <a target="_blank" rel="noreferrer" href="https://www.nike.com/">
+              <button  onClick={() => navigate("/underconstruction")}>
                 Order Status
-              </a>
+              </button>
             </li>
             <li>
-              <a target="_blank" rel="noreferrer" href="https://www.nike.com/">
+              <button  onClick={() => navigate("/underconstruction")}>
                 Shipping & Delivery
-              </a>
+              </button>
             </li>
             <li>
-              <a target="_blank" rel="noreferrer" href="https://www.nike.com/">
+              <button  onClick={() => navigate("/underconstruction")}>
                 FAQ
-              </a>
+              </button>
             </li>
             <li>
-              <a target="_blank" rel="noreferrer" href="https://www.nike.com/">
+              <button  onClick={() => navigate("/underconstruction")}>
                 Payment Options
-              </a>
+              </button>
             </li>
             <li>
-              <a target="_blank" rel="noreferrer" href="https://www.nike.com/">
+              <button  onClick={() => navigate("/underconstruction")}>
                 Contact Us
-              </a>
+              </button>
             </li>
           </ul>
         </div>
@@ -69,29 +72,29 @@ function Footer() {
           <h3 className=" mb-3 font-bold text-lg">COMPANY</h3>
           <ul className="leading-10">
             <li>
-              <a target="_blank" rel="noreferrer" href="https://www.nike.com/">
+              <button  onClick={() => navigate("/underconstruction")}>
                 Gift Cards
-              </a>
+              </button>
             </li>
             <li>
-              <a target="_blank" rel="noreferrer" href="https://www.nike.com/">
+              <button  onClick={() => navigate("/underconstruction")}>
                 Promotions
-              </a>
+              </button>
             </li>
             <li>
-              <a target="_blank" rel="noreferrer" href="https://www.nike.com/">
+              <button  onClick={() => navigate("/underconstruction")}>
                 Find A Store
-              </a>
+              </button>
             </li>
             <li>
-              <a target="_blank" rel="noreferrer" href="https://www.nike.com/">
+              <button  onClick={() => navigate("/underconstruction")}>
                 Signup
-              </a>
+              </button>
             </li>
             <li>
-              <a target="_blank" rel="noreferrer" href="https://www.nike.com/">
+              <button  onClick={() => navigate("/underconstruction")}>
                 Send Us Feeback
-              </a>
+              </button>
             </li>
           </ul>
         </div>
@@ -107,4 +110,4 @@ function Footer() {
   );
 }
 
-export default Footer
+export default Footer;

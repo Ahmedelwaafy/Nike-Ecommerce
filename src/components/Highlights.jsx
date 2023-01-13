@@ -1,5 +1,7 @@
+import { useNavigate } from "react-router-dom";
 
 function Highlights() {
+  const navigate = useNavigate();
   return (
     <section className="w-5/6 mx-auto flex gap-64 lg:gap-36 md:gap-20 mt-7  items-center  sm:flex-col-reverse">
       <img
@@ -19,7 +21,8 @@ function Highlights() {
           Our Purpose is to move the world forward. We take action by building
           community, protecting our planet and increasing access to sport.
         </p>
-        <button className="text-cgray bg-light-brown px-3  py-2 rounded-sm active:scale-90 transition-all duration-100 ease-in-out hover:bg-brown  shadow-sm  shadow-light-brown hover:shadow-brown md:text-sm">
+        <button className="text-cgray bg-light-brown px-3  py-2 rounded-sm active:scale-90 transition-all duration-100 ease-in-out hover:bg-brown  shadow-sm  shadow-light-brown hover:shadow-brown md:text-sm"
+        onClick={()=> navigate("/collections")} >
           Explore More
         </button>
       </div>
