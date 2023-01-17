@@ -1,12 +1,11 @@
-import { Splide, SplideSlide } from '@splidejs/react-splide';
+import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css/skyblue";
 import { truncate } from "lodash";
 import Loader from "./Utility Components/Loader";
 
-function Stories({ stories ,isLoading, isError, error }) {
- 
+function Stories({ stories, isLoading, isError, error }) {
   if (isLoading) {
-    return <Loader />
+    return <Loader />;
   }
 
   if (isError) {
@@ -16,7 +15,7 @@ function Stories({ stories ,isLoading, isError, error }) {
       </h3>
     );
   }
-  
+
   const splideOptions = {
     perPage: 4,
     perMove: 1,
@@ -39,11 +38,13 @@ function Stories({ stories ,isLoading, isError, error }) {
       <h2 className="text-4xl font-bold sm:text-center md:text-2xl ">
         Top Stories
       </h2>
+      
+      
       <div className="mt-7">
         <Splide options={splideOptions}>
           {stories.map((story, i) => (
             <SplideSlide key={i}>
-              <div className="flex-col  pb-2 rounded-lg shadow shadow-slate-400 ring-1 ring-[#0AC1EF] overflow-hidden">
+              <div className="flex-col pb-2 rounded-lg shadow-md shadow-slate-400 ring-1 ring-[#0AC1EF] overflow-hidden">
                 <div className="overflow-hidden">
                   <img
                     src={story.img}
@@ -98,4 +99,4 @@ function Stories({ stories ,isLoading, isError, error }) {
   );
 }
 
-export default Stories
+export default Stories;

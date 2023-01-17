@@ -10,14 +10,9 @@ import Stories from "../components/Stories";
 function HomePage() {
   const [popular, setPopular] = useState([]);
   const [top, setTop] = useState([]);
-  const [men, setMen] = useState([]);
-  const [women, setWomen] = useState([]);
-  const [kids, setKids] = useState([]);
-  const [collections, setCollections] = useState([]);
-  const [covers, setCovers] = useState([]);
   const [stories, setStories] = useState([]);
 
-  const { data, isLoading, isError, error } = useQuery(
+  const { isLoading, isError, error } = useQuery(
     ["shoes"],
     async () => {
       const res = await axios.get(process.env.REACT_APP_URL);
@@ -25,19 +20,15 @@ function HomePage() {
     },
     {
       cacheTime: 300,
-      refetchOnMount: false,
+      //refetchOnMount: true,
       refetchOnWindowFocus: false,
       onSuccess: (data) => {
         
-      const { popular, top, men, women, kids, collections, covers, Stories } =
+      const { popular, top, Stories } =
         data;
       setPopular(popular);
       setTop(top);
-      setMen(men);
-      setWomen(women);
-      setKids(kids);
-      setCollections(collections);
-      setCovers(covers);
+    
       setStories(Stories);
       },
       //staleTime: Infinity,
@@ -62,7 +53,7 @@ function HomePage() {
         isError={isError}
         error={error}
       />
-      <Featured />
+      <Featured stories={stories} />
       <Stories
         stories={stories}
         isLoading={isLoading}

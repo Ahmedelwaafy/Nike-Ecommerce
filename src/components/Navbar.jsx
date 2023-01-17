@@ -39,11 +39,7 @@ function Navbar() {
         {/** 2-Desktop Menu */}
         <ul className="  sm:hidden flex justify-between items-center gap-12 text-sm font-DMSans font-semibold  ">
           <li>
-            <NavLink
-              className="underline-gradient "
-              to="/"
-              style={activeLink}
-            >
+            <NavLink className="underline-gradient " to="/" style={activeLink}>
               Home
             </NavLink>
           </li>
@@ -104,29 +100,50 @@ function Navbar() {
           */}
           <ul className="  flex flex-col justify-between items-center gap-20 text-sm font-DMSans font-semibold  ">
             <li>
-              <a onClick={() => setToggle(false)} href="#bob">
-                {" "}
+              <NavLink
+                className="underline-gradient "
+                to="/"
+                style={activeLink}
+              >
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className="underline-gradient  "
+                to="/women"
+                style={activeLink}
+              >
                 Women
-              </a>
+              </NavLink>
             </li>
 
             <li>
-              <a onClick={() => setToggle(false)} href="#hif">
-                {" "}
-                Men{" "}
-              </a>
+              <NavLink
+                className="underline-gradient "
+                to="/men"
+                style={activeLink}
+              >
+                Men
+              </NavLink>
             </li>
             <li>
-              <a onClick={() => setToggle(false)} href="#hif">
-                {" "}
-                Kids{" "}
-              </a>
+              <NavLink
+                className="underline-gradient "
+                to="/kids"
+                style={activeLink}
+              >
+                Kids
+              </NavLink>
             </li>
             <li>
-              <a onClick={() => setToggle(false)} href="#hif">
-                {" "}
-                Collections{" "}
-              </a>
+              <NavLink
+                className="underline-gradient "
+                to="Collections"
+                style={activeLink}
+              >
+                Collections
+              </NavLink>
             </li>
           </ul>
         </div>

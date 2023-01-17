@@ -1,6 +1,7 @@
-function Item({ item, pop }) {
+import { Link } from "react-router-dom";
 
-  const { title, text, rating, btn, img, price, color, shadow } = item;
+function Item({ item, pop, name }) {
+  const { title, text, rating, btn, img, price, color, shadow, id } = item;
 
   return (
     <div
@@ -17,7 +18,9 @@ function Item({ item, pop }) {
       {/**Content */}
       <div className={` ${pop ? "" : "text-center "}`}>
         <h3 className="text-cgray text-xl font-medium filter drop-shadow">
-          {title}
+          <Link className="underline-gradient " to={`/${name}/${id}`}>
+            {title}
+          </Link>
         </h3>
         <h4 className="text-cgray  filter drop-shadow">{text}</h4>
 

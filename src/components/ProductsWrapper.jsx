@@ -2,7 +2,7 @@ import Item from "./Utility Components/Item";
 import Loader from "./Utility Components/Loader";
 
 function ProductsWrapper({ pop, endpoint, isLoading, isError, error }) {
- 
+ const name = "top";
   if (isLoading) {
     return <Loader />
   }
@@ -26,7 +26,7 @@ function ProductsWrapper({ pop, endpoint, isLoading, isError, error }) {
         }`}
       >
         {endpoint.map((item) => (
-          <Item  pop={pop} item={item} key={item.id} />
+          <Item name={name} pop={pop} item={item} key={item.id} />
         ))}
       </div>
     </div>

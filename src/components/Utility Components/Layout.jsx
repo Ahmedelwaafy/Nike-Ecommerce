@@ -5,6 +5,9 @@ function Layout() {
   return (
     <>
       <Navbar />
+      <div id="hero" className="">
+        
+      </div>
       <Outlet />
       <Footer />
     </>

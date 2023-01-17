@@ -1,7 +1,10 @@
 import { useNavigate } from "react-router-dom";
 
-function Featured() {
-    const navigate = useNavigate();
+
+
+function Featured({ stories }) {
+  const navigate = useNavigate();
+  console.log(stories);
 
   return (
     <section className="w-5/6 mx-auto flex gap-64 lg:gap-36 md:gap-20 mt-7  items-center sm:flex-col ">
@@ -29,6 +32,8 @@ function Featured() {
         src="../assets/box.png"
         alt="box"
       />
+
+      
     </section>
   );
 }
