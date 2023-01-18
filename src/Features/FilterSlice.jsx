@@ -12,4 +12,4 @@ const FilterSlice = createSlice({
   },
 });
 export default FilterSlice.reducer;
-export const { search } = FilterSlice.actions;
+export const {search} = FilterSlice.actions;
