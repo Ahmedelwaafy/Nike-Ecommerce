@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import Items from "../components/Utility Components/Items";
 import { useEffect } from "react";
-import Filter from "../components/Utility Components/Filter";
+import FilterView from "../components/Utility Components/FilterView";
 
 function Women() {
   const [women, setWomen] = useState([]);
@@ -93,7 +93,7 @@ const name = "women";
       />
 
       <section className="   flex w-full justify-between gap-12">
-        <aside className="w-1/6 sticky top-[520px] left-0 h-auto bg-orange-500 flex justify-center"> <Filter/> </aside>
+        <aside className="w-1/6 sticky top-[520px] left-0 h-auto bg-orange-500 flex justify-center"> <FilterView/> </aside>
         <div className="w-5/6 mr-5">
           <Items type={women} name={name} setPage={setPage} />
         </div>

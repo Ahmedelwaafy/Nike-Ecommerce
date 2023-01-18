@@ -1,4 +1,4 @@
-function Filter() {
+function FilterView() {
   function handlePriceChange(params) {}
 function handleSizeChange(params) {}
 function handleRangeChange(params) {}
@@ -91,7 +91,7 @@ function handleRangeChange(params) {}
   );
 }
 
-export default Filter;
+export default FilterView;
 
 
 
