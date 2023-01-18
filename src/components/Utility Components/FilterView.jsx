@@ -4,7 +4,7 @@ import {useSelector} from "react-redux";
 function FilterView() {
   const dispatch = useDispatch();
   const word = useSelector((state) => state.Filter.search);
-  console.log(word)
+  
   function handlePriceChange(params) {}
   function handleSizeChange(params) {}
   function handleRangeChange(params) {}
