@@ -13,19 +13,18 @@ import {
 } from "react-router-dom";
 import { lazy, Suspense } from "react";
 
-
 const LazyWomen = lazy(() => import("./Pages/Women"));
 const LazyMen = lazy(() => import("./Pages/Men"));
 const LazyKids = lazy(() => import("./Pages/Kids"));
 const LazyCollections = lazy(() => import("./Pages/Collections"));
-const men ="men"
-const women ="women"
-const kids ="kids"
-const collections ="collections"
-const top ="top"
+const names = {
+  men: "men",
+  women: "women",
+  kids: "kids",
+  collections: "collections",
+  top: "top",
+};
 function App() {
-
-  
   return (
     <Router>
       <Routes>
@@ -65,11 +64,14 @@ function App() {
           />
 
           <Route path="/underconstruction" element={<UnderConstruction />} />
-          <Route path="/women/:id" element={<ItemPage type={women}/>} />
-          <Route path="/men/:id" element={<ItemPage type={men}/>} />
-          <Route path="/kids/:id" element={<ItemPage type={kids}/>} />
-          <Route path="/collections/:id" element={<ItemPage type={collections}/>} />
-          <Route path="/top/:id" element={<ItemPage type={top}/>} />
+          <Route path="/women/:id" element={<ItemPage type={names.women} />} />
+          <Route path="/men/:id" element={<ItemPage type={names.men} />} />
+          <Route path="/kids/:id" element={<ItemPage type={names.kids} />} />
+          <Route
+            path="/collections/:id"
+            element={<ItemPage type={names.collections} />}
+          />
+          <Route path="/top/:id" element={<ItemPage type={names.top} />} />
         </Route>
 
         <Route path="*" element={<Missing />} />

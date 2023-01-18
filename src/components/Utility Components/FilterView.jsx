@@ -1,7 +1,13 @@
+import { search } from "../../Features/FilterSlice";
+import {useDispatch} from "react-redux";
+import {useSelector} from "react-redux";
 function FilterView() {
+  const dispatch = useDispatch();
+  const word = useSelector((state) => state.Filter.search);
+  console.log(word)
   function handlePriceChange(params) {}
-function handleSizeChange(params) {}
-function handleRangeChange(params) {}
+  function handleSizeChange(params) {}
+  function handleRangeChange(params) {}
   return (
     <div>
       {/**Sorting */}
@@ -16,6 +22,7 @@ function handleRangeChange(params) {}
               value="lth"
               onChange={() => handlePriceChange()}
             />
+            <input type="text"  onChange={(e) => dispatch(search(e.target.value))} />
             <span className="text-sm">Low to High</span>
           </label>
           <label className="flex items-center gap-3" htmlFor="">
@@ -84,7 +91,6 @@ function handleRangeChange(params) {}
               onChange={() => handleRangeChange()}
             />
           </label>
-        
         </div>
       </div>
     </div>
@@ -92,15 +98,3 @@ function handleRangeChange(params) {}
 }
 
 export default FilterView;
-
-
-
-
-
-
-
-
-
-
-
-

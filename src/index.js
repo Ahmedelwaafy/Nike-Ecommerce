@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import provider from "react-redux";
-import Store from  "./Store/Store"
+import {Provider} from "react-redux";
+import {Store} from  "./Store/Store"
  const client = new QueryClient({
     
   });
@@ -12,9 +12,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <QueryClientProvider client={client}>
-      <provider Store={Store}>
+      <Provider store={Store}>
         <App />
-      </provider>
+      </Provider>
     </QueryClientProvider>
   </React.StrictMode>
 );
