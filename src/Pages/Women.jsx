@@ -6,14 +6,14 @@ import { useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 function Women() {
   const dispatch = useDispatch();
-  const word = useSelector((state) => state.Filter.search);
+  const query = useSelector((state) => state.Filter.search);
   const [searchShoe, setSearchShoe] = useSearchParams();
  
 
 
   const name = "women";
   const searchCourse = () => {
-    setSearchShoe({ search: word });
+    setSearchShoe({ search: query });
   };
   const dispatchKey = (key) => {
     dispatch(search(key));
@@ -40,7 +40,7 @@ function Women() {
 
             <input
               placeholder="Search"
-              value={word}
+              value={query}
               onChange={(e) => dispatch(search(e.target.value))}
               type="text"
               className="input"

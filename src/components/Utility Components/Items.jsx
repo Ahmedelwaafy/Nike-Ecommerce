@@ -3,12 +3,14 @@ import Loader from "./Loader";
 import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
-import { FilterByQuery } from "./FilterFunctions";
+import { FilterByQuery, SortByPrice } from "./FilterFunctions";
+import { useSelector } from "react-redux";
 
 function Items({ searchShoe, name }) {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState("");
+  const sort = useSelector((state) => state.Filter.sort);
 
   useEffect(() => {
     async function fetchData() {
@@ -23,10 +25,13 @@ function Items({ searchShoe, name }) {
     fetchData();
   }, [page, name]);
 const ItemsFilterdByQuery = FilterByQuery(data, searchShoe.get("search"));
+
+const ItemsSortedByPrice = SortByPrice(ItemsFilterdByQuery, sort);
+
   if (loading) {
     return <Loader />;
   }
-  if (ItemsFilterdByQuery.length === 0) {
+  if (ItemsSortedByPrice.length === 0) {
     return (
       <h2 className="text-center mt-16 text-xl">
         No Items Found! Try Trending Instead
@@ -37,7 +42,7 @@ const ItemsFilterdByQuery = FilterByQuery(data, searchShoe.get("search"));
     <>
       <div className="grid items-center justify-items-center mt-7 w-full     grid-cols-3 lg:grid-cols-2 sm:grid-cols-1 gap-10">
         {/*searchShoe.get("search") ? filteredShoes() : allShoes()*/}
-        {ItemsFilterdByQuery.map((item) => (
+        {ItemsSortedByPrice.map((item) => (
           <Item item={item} name={name} key={item.id} />
         ))}
       </div>
