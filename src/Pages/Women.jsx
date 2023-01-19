@@ -10,7 +10,7 @@ function Women() {
   const [searchShoe, setSearchShoe] = useSearchParams();
 
   const name = "women";
-  const searchCourse = () => {
+  const findShoe = () => {
     setSearchShoe({ search: query });
   };
   const dispatchKey = (key) => {
@@ -29,15 +29,19 @@ function Women() {
               src="../assets/search.svg"
               alt="search"
               className="icon cursor-pointer"
-              onClick={() => searchCourse()}
+              onClick={() => findShoe()}
             />
 
             <input
               placeholder="Search"
+              name="Search"
               value={query}
               onChange={(e) => dispatch(search(e.target.value))}
               type="text"
               className="input"
+              autoComplete="on"
+              autoFocus
+              
             />
           </div>
 

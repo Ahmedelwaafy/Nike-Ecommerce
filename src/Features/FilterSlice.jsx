@@ -15,6 +15,9 @@ const FilterSlice = createSlice({
     size: (state, action) => {
       state.size = action.payload.check? [...state.size,action.payload.key ] : state.size.length > 0 ? state.size.filter(key=> key !== action.payload.key) : []
     },
+    color: (state, action) => {
+      state.color = action.payload.check? [...state.color,action.payload.key ] : state.color.length > 0 ? state.color.filter(key=> key !== action.payload.key) : []
+    },
   },
 });
 export default FilterSlice.reducer;

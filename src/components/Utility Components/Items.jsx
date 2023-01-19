@@ -3,9 +3,13 @@ import Loader from "./Loader";
 import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
-import { FilterByQuery, SortByPrice, SortBySize } from "./FilterFunctions";
+import {
+  FilterByQuery,
+  SortByPrice,
+  SortBySize,
+  SortByColor,
+} from "./FilterFunctions";
 import { useSelector } from "react-redux";
-//import { sort } from "../../Features/FilterSlice";
 
 function Items({ searchShoe, name }) {
   const [data, setData] = useState([]);
@@ -13,6 +17,7 @@ function Items({ searchShoe, name }) {
   const [page, setPage] = useState("");
   const sort = useSelector((state) => state.Filter.sort);
   const size = useSelector((state) => state.Filter.size);
+  const color = useSelector((state) => state.Filter.color);
 
   useEffect(() => {
     async function fetchData() {
@@ -27,14 +32,14 @@ function Items({ searchShoe, name }) {
     fetchData();
   }, [page, name]);
 const ItemsFilterdByQuery = FilterByQuery(data, searchShoe.get("search"));
-
 const ItemsSortedByPrice = SortByPrice(ItemsFilterdByQuery, sort);
 const ItemsSortedBySize = SortBySize(ItemsSortedByPrice, size);
+const ItemsSortedByColor = SortByColor(ItemsSortedBySize, color);
 
   if (loading) {
     return <Loader />;
   }
-  if (ItemsSortedBySize.length === 0) {
+  if (ItemsSortedByColor.length === 0) {
     return (
       <h2 className="text-center mt-16 text-xl">
         No Items Found! Try Trending Instead
@@ -45,7 +50,7 @@ const ItemsSortedBySize = SortBySize(ItemsSortedByPrice, size);
     <>
       <div className="grid items-center justify-items-center mt-7 w-full     grid-cols-3 lg:grid-cols-2 sm:grid-cols-1 gap-10">
         {/*searchShoe.get("search") ? filteredShoes() : allShoes()*/}
-        {ItemsSortedBySize.map((item) => (
+        {ItemsSortedByColor.map((item) => (
           <Item item={item} name={name} key={item.id} />
         ))}
       </div>

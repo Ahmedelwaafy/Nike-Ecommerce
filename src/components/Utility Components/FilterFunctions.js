@@ -17,9 +17,17 @@ export const SortByPrice = (items, sort) => {
   );
   return sortedItems;
 };
+
 export const SortBySize = (items, size) => {
   const sortedItems = [...items].filter((item) =>
     size.length > 0 ? size.includes(item.size) : items
+  );
+  return sortedItems;
+};
+
+export const SortByColor = (items, color) => {
+  const sortedItems = [...items].filter((item) =>
+    color.length > 0 ? color.includes(item.shoeColor) : items
   );
   return sortedItems;
 };
