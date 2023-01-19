@@ -298,9 +298,8 @@
   .icon {
     position: absolute;
     left: 1rem;
-    fill: #777;
-    width: 1rem;
-    height: 1rem;
+    top: 0.8rem;
+  
   }
 
   .f-col {

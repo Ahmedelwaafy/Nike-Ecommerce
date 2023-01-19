@@ -1,4 +1,4 @@
-import { sort } from "../../Features/FilterSlice";
+import { sort, size } from "../../Features/FilterSlice";
 import {useDispatch} from "react-redux";
 function FilterView() {
   const dispatch = useDispatch();
@@ -42,15 +42,18 @@ function FilterView() {
           <label className="flex items-center gap-3" htmlFor="">
             <input
               type="checkbox"
-              onChange={() => handleSizeChange()}
-              //checked={c}
+              onChange={(e) =>
+                dispatch(size({ key: "s", check: e.target.checked }))
+              } //checked={c}
             />
             <span className="text-sm">S</span>
           </label>
           <label className="flex items-center gap-3" htmlFor="">
             <input
               type="checkbox"
-              onChange={() => handleSizeChange()}
+              onChange={(e) =>
+                dispatch(size({ key: "m", check: e.target.checked }))
+              }
               //checked={c}
             />
             <span>M</span>
@@ -58,16 +61,18 @@ function FilterView() {
           <label className="flex items-center gap-3" htmlFor="">
             <input
               type="checkbox"
-              onChange={() => handleSizeChange()}
-              //checked={c}
+              onChange={(e) =>
+                dispatch(size({ key: "l", check: e.target.checked }))
+              } //checked={c}
             />
             <span>L</span>
           </label>
           <label className="flex items-center gap-3" htmlFor="">
             <input
               type="checkbox"
-              onChange={() => handleSizeChange()}
-              //checked={c}
+              onChange={(e) =>
+                dispatch(size({ key: "xl", check: e.target.checked }))
+              } //checked={c}
             />
             <span>XL</span>
           </label>
@@ -75,21 +80,6 @@ function FilterView() {
       </div>
 
       {/**Price Range */}
-      <div>
-        <h3 className="text-xl font-medium">Range</h3>
-        <hr className="w-2/4 my-2 " />
-        <div className="flex-col">
-          <label className="flex-col items-center gap-3" htmlFor="">
-            <span className="text-sm">Low to High</span>
-            <input
-              type="range"
-              name="price"
-              value="lth"
-              onChange={() => handleRangeChange()}
-            />
-          </label>
-        </div>
-      </div>
     </div>
   );
 }
