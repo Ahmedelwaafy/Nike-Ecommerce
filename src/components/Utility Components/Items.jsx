@@ -54,21 +54,22 @@ const ItemsSortedByColor = SortByColor(ItemsSortedBySize, color);
           <Item item={item} name={name} key={item.id} />
         ))}
       </div>
-
-      <div className="flex  justify-center gap-4 mt-16">
-        <button
-          className="bg-cblue text-csky w-8 h-8 rounded-md shadow-sm shadow-slate-500 text-xl hover:bg-blue-400 "
-          onClick={() => setPage(1)}
-        >
-          1
-        </button>
-        <button
-          className="bg-cblue text-csky w-8 h-8 rounded-md shadow-sm shadow-slate-500 text-xl hover:bg-blue-400 "
-          onClick={() => setPage(2)}
-        >
-          2
-        </button>
-      </div>
+      {ItemsSortedByColor.length > 1 && (
+        <div className="flex  justify-center gap-4 mt-16">
+          <button
+            className="bg-cblue text-csky w-8 h-8 rounded-md shadow-sm shadow-slate-500 text-xl hover:bg-blue-400 "
+            onClick={() => setPage(1)}
+          >
+            1
+          </button>
+          <button
+            className="bg-cblue text-csky w-8 h-8 rounded-md shadow-sm shadow-slate-500 text-xl hover:bg-blue-400 "
+            onClick={() => setPage(2)}
+          >
+            2
+          </button>
+        </div>
+      )}
     </>
   );
 }

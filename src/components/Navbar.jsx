@@ -1,7 +1,13 @@
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import { setToggleCart } from "../Features/CartSlice";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 function Navbar() {
+   const dispatch = useDispatch();
+   const cartState = useSelector((state) => state.Cart.cartState);
+   const totalQTY = useSelector((state) => state.Cart.totalQTY);
   const [scroll, setScroll] = useState(false);
   const [toggle, setToggle] = useState(false);
 
@@ -149,10 +155,16 @@ function Navbar() {
         </div>
 
         {/** 3-Cart Icon */}
-        <div>
+        <div
+          className="relative hover:scale-110 transition-all duration-300"
+          onClick={() => dispatch(setToggleCart(!cartState))}
+        >
           <button>
             <img src="../assets/cart.svg" alt="" />
           </button>
+          <div className="text-cgray bg-cblue flex items-center justify-center rounded-full text-xs shadow-sm shadow-cgray absolute bottom-[26px] left-[4px] px-[4px] cursor-pointer  ">
+            {/**totalQTY */}0
+          </div>
         </div>
       </div>
     </nav>

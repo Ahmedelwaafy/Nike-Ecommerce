@@ -2,9 +2,14 @@ import { useParams } from "react-router-dom"
 import { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
+import { setAddItemToCart } from "../../Features/CartSlice";
+import { useDispatch } from "react-redux";
+
 
 function ItemPage({type}) {
-    const [data, setData] = useState([]);
+      const dispatch = useDispatch();
+
+    const [data, setData] = useState({});
     const [flip, setFlip] = useState("");
 
   const { id } = useParams();
@@ -70,6 +75,7 @@ function ItemPage({type}) {
             <button
               type="button"
               className="blur-gray box-shadow  py-1 px-1.5 rounded-md active:scale-90 transition-all duration-100 ease-in-out"
+              onClick={() => dispatch(setAddItemToCart(data))}
             >
               <img className="w-5 h-5 " src="../assets/cart.svg" alt="cart" />
             </button>

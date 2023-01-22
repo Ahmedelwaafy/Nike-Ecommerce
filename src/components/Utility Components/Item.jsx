@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
+import { setAddItemToCart } from "../../Features/CartSlice";
+import { useDispatch } from "react-redux";
 
 function Item({ item, pop, name }) {
+    const dispatch = useDispatch();
+
   const { title, text, rating, btn, img, price, color, shadow, id } = item;
 
   return (
@@ -45,6 +49,7 @@ function Item({ item, pop, name }) {
           <button
             type="button"
             className="blur-gray box-shadow  py-1 px-1.5 rounded-md active:scale-90 transition-all duration-100 ease-in-out"
+            onClick={() => dispatch(setAddItemToCart(item))}
           >
             <img className="w-5 h-5 " src="../assets/cart.svg" alt="cart" />
           </button>

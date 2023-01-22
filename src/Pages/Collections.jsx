@@ -10,7 +10,7 @@ function Collections() {
   const [searchShoe, setSearchShoe] = useSearchParams();
 
   const name = "collections";
-  const searchCourse = () => {
+  const findShoe = () => {
     setSearchShoe({ search: query });
   };
   const dispatchKey = (key) => {
@@ -19,7 +19,7 @@ function Collections() {
   };
 
   return (
-    <main className="my-[78px]    justify-center">
+    <main className="my-[78px] relative   justify-center">
       <div className="f-col ">
         <h1 className="  font-bold font-Anton text-3xl -mb-3 ">Nike</h1>
         <h2 className="font-medium ">The Best Shoes Ever and Forever</h2>
@@ -29,15 +29,18 @@ function Collections() {
               src="../assets/search.svg"
               alt="search"
               className="icon cursor-pointer"
-              onClick={() => searchCourse()}
+              onClick={() => findShoe()}
             />
 
             <input
               placeholder="Search"
+              name="Search"
               value={query}
               onChange={(e) => dispatch(search(e.target.value))}
               type="text"
               className="input"
+              autoComplete="on"
+              autoFocus
             />
           </div>
 
@@ -48,7 +51,7 @@ function Collections() {
             }}
             className=""
           >
-            reset
+            Reset
           </button>
         </div>
         <div className="flex items-center ">
@@ -83,17 +86,23 @@ function Collections() {
         </div>
       </div>
       <img
-        className=" z-[-1] w-full absolute top-[78px] right-0 left-0  h-[500px] object-cover"
+        className=" z-[-1] w-full absolute top-0 right-0 left-0  h-[500px] object-cover"
         src="../assets/covers/collections.svg"
         alt="collections-cover"
       />
 
-      <section className="   flex w-full justify-between gap-12">
-        <aside className="w-1/6 sticky top-[520px] left-0 h-auto bg-orange-500 flex justify-center">
-          {" "}
-          <FilterView />{" "}
+      <div className="sticky top-0">
+        <aside
+          style={{
+            background: "linear-gradient(90deg,#4646FB 0%,#BE4DFF 100%)",
+          }}
+          className="w-1/6  top-[78px]  absolute  left-0 h-auto  flex justify-center sm:w-28 shadow-lg shadow-slate-500"
+        >
+          <FilterView />
         </aside>
-        <div className="w-5/6 mr-5">
+      </div>
+      <section className="     flex w-full justify-end gap-16">
+        <div className="w-5/6 px-10 ss:px-12  pt-12 ">
           <Items searchShoe={searchShoe} name={name} />
         </div>
       </section>

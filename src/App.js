@@ -1,5 +1,6 @@
 import HomePage from "./Pages/HomePage";
 import Layout from "./components/Utility Components/Layout";
+import ProductsLayout from "./components/Utility Components/ProductsLayout";
 import Missing from "./components/Utility Components/Missing";
 import ItemPage from "./components/Utility Components/ItemPage";
 import UnderConstruction from "./components/Utility Components/UnderConstruction";
@@ -30,6 +31,21 @@ function App() {
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<HomePage />} />
+          
+
+          <Route path="/underconstruction" element={<UnderConstruction />} />
+          <Route path="/women/:id" element={<ItemPage type={names.women} />} />
+          <Route path="/men/:id" element={<ItemPage type={names.men} />} />
+          <Route path="/kids/:id" element={<ItemPage type={names.kids} />} />
+          <Route
+            path="/collections/:id"
+            element={<ItemPage type={names.collections} />}
+          />
+          <Route path="/top/:id" element={<ItemPage type={names.top} />} />
+        </Route>
+
+        <Route element={<ProductsLayout/>}>
+          
           <Route
             path="/women"
             element={
@@ -62,16 +78,6 @@ function App() {
               </Suspense>
             }
           />
-
-          <Route path="/underconstruction" element={<UnderConstruction />} />
-          <Route path="/women/:id" element={<ItemPage type={names.women} />} />
-          <Route path="/men/:id" element={<ItemPage type={names.men} />} />
-          <Route path="/kids/:id" element={<ItemPage type={names.kids} />} />
-          <Route
-            path="/collections/:id"
-            element={<ItemPage type={names.collections} />}
-          />
-          <Route path="/top/:id" element={<ItemPage type={names.top} />} />
         </Route>
 
         <Route path="*" element={<Missing />} />

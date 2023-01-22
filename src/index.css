@@ -319,6 +319,18 @@
     gap: 100px;
   }
 
+  .flexCol {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cartItemCol {
+    display: flex;
+    flex-direction: column;
+  }
+
   /* Flip Horizontally */
   .flip {
     transform: rotateY(180deg);
@@ -376,6 +388,7 @@
     gap: 10px;
     align-items: start;
     justify-content: space-evenly;
+    width: fit-content;
   }
   .wrapper .option {
     background: rgba(197, 197, 197, 0.527);
@@ -402,4 +415,137 @@
   input#htl:checked ~ .option-2 span {
     color: #edf3f8;
   }
+
+  /**backicon*/
+  .cssbuttons-io-button {
+    background: #093959;
+    color: #edf3f8;
+    font-family: inherit;
+    padding: 0.35em;
+    padding-left: 1.2em;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 0.9em;
+    border: none;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    box-shadow: inset 0 0 1.6em -0.6em #093959;
+    overflow: hidden;
+    position: relative;
+    height: 2.8em;
+    padding-right: 3.3em;
+  }
+
+  .cssbuttons-io-button .backicon {
+    background: #edf3f8;
+    margin-left: 1em;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.2em;
+    width: 2.2em;
+    border-radius: 0.7em;
+    box-shadow: 0.1em 0.1em 0.6em 0.2em #093959;
+    right: 0.3em;
+    transition: all 0.3s;
+  }
+
+  .cssbuttons-io-button:hover .backicon {
+    width: calc(100% - 0.6em);
+  }
+
+  .cssbuttons-io-button .backicon svg {
+    width: 1.1em;
+    transition: transform 0.3s;
+    color: #093959;
+  }
+
+  .cssbuttons-io-button:hover .backicon svg {
+    transform: translateX(0.1em);
+  }
+
+  .cssbuttons-io-button:active .backicon {
+    transform: scale(0.95);
+  }
+
+  /* Scroll */
+  .scroll-hidden::-webkit-scrollbar{
+    display: none;
+  }
+
+  .hfull {
+  height: 100%;
+}
+ 
+  /** checkout button*/
+  
+  .c-button {
+ color: #000;
+ font-weight: 700;
+ font-size: 12px;
+ text-decoration: none;
+ padding: 0.6em 1.6em;
+ 
+ cursor: pointer;
+ display: inline-block;
+ vertical-align: middle;
+ position: relative;
+ z-index: 1;
+}
+
+.c-button--gooey {
+ color: #093959;
+ text-transform: uppercase;
+ letter-spacing: 2px;
+ border: 4px solid #093959;
+ border-radius: 0px;
+ position: relative;
+ transition: all 700ms ease;
+}
+
+.c-button--gooey .c-button__blobs {
+ height: 100%;
+ filter: url(#goo);
+ overflow: hidden;
+ position: absolute;
+ top: 0;
+ left: 0;
+ bottom: -3px;
+ right: -1px;
+ z-index: -1;
+}
+
+.c-button--gooey .c-button__blobs div {
+ background-color: #093959;
+ width: 34%;
+ height: 100%;
+ border-radius: 100%;
+ position: absolute;
+ transform: scale(1.4) translateY(125%) translateZ(0);
+ transition: all 700ms ease;
+}
+
+.c-button--gooey .c-button__blobs div:nth-child(1) {
+ left: -5%;
+}
+
+.c-button--gooey .c-button__blobs div:nth-child(2) {
+ left: 30%;
+ transition-delay: 60ms;
+}
+
+.c-button--gooey .c-button__blobs div:nth-child(3) {
+ left: 66%;
+ transition-delay: 25ms;
+}
+
+.c-button--gooey:hover {
+ color: #EDF3F8;
+}
+
+.c-button--gooey:hover .c-button__blobs div {
+ transform: scale(1.4) translateY(0) translateZ(0);
+}
 }
