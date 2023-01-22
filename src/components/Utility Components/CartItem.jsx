@@ -1,4 +1,8 @@
-import { setRemoveItemFromCart } from "../../Features/CartSlice";
+import {
+  setRemoveItemFromCart,
+  setIncreaseItemQTY,
+  setDecreaseItemQTY,
+} from "../../Features/CartSlice";
 import { useDispatch } from "react-redux";
 
 function CartItem({ item }) {
@@ -25,13 +29,19 @@ function CartItem({ item }) {
             <p className="text-sm">{text}</p>
           </div>
           <div className="flex items-center justify-evenly gap-3">
-            <p className="bg-cblue text-cgray px-[6px] py-2 rounded-md leading-3  text-3xl cursor-pointer active:scale-90 transition duration-300  ">
+            <p
+              className="bg-cblue text-cgray px-[6px] py-2 rounded-md leading-3  text-3xl cursor-pointer active:scale-90 transition duration-300  "
+              onClick={() => dispatch(setDecreaseItemQTY(item))}
+            >
               -
             </p>
             <p className="bg-csky text-cblue w-9  h-9 flex items-center justify-center rounded-md leading-3  text-xl   ">
               {cartQTY}
             </p>
-            <p className="bg-cblue text-cgray px-[6px] py-2 rounded-md leading-3  text-3xl cursor-pointer active:scale-90 transition duration-300  ">
+            <p
+              className="bg-cblue text-cgray px-[6px] py-2 rounded-md leading-3  text-3xl cursor-pointer active:scale-90 transition duration-300  "
+              onClick={() => dispatch(setIncreaseItemQTY(item))}
+            >
               +
             </p>
           </div>
