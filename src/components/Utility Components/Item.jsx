@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
-import { setAddItemToCart } from "../../Features/CartSlice";
+import { setAddItemToCart, setToggleCart } from "../../Features/CartSlice";
 import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 function Item({ item, pop, name }) {
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
+ const cartState = useSelector((state) => state.Cart.cartState);
 
   const { title, text, rating, btn, img, price, color, shadow, id } = item;
 
@@ -56,6 +58,10 @@ function Item({ item, pop, name }) {
           <button
             type="button"
             className="blur-gray box-shadow py-1 px-2 rounded-md font-medium active:scale-90 transition-all duration-100 ease-in-out"
+            onClick={() => {
+              dispatch(setAddItemToCart(item));
+              dispatch(setToggleCart(!cartState));
+            }}
           >
             {btn}
           </button>

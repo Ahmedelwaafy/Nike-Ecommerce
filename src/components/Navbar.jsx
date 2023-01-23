@@ -7,7 +7,10 @@ import { useSelector } from "react-redux";
 function Navbar() {
    const dispatch = useDispatch();
    const cartState = useSelector((state) => state.Cart.cartState);
-   const totalQTY = useSelector((state) => state.Cart.totalQTY);
+    const cartTotalQuantity = useSelector(
+      (state) => state.Cart.cartTotalQuantity
+    );
+
   const [scroll, setScroll] = useState(false);
   const [toggle, setToggle] = useState(false);
 
@@ -163,7 +166,7 @@ function Navbar() {
             <img src="../assets/cart.svg" alt="" />
           </button>
           <div className="text-cgray bg-cblue flex items-center justify-center rounded-full text-xs shadow-sm shadow-cgray absolute bottom-[26px] left-[4px] px-[4px] cursor-pointer  ">
-            {/**totalQTY */}0
+            {cartTotalQuantity }
           </div>
         </div>
       </div>

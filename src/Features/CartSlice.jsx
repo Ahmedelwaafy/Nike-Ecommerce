@@ -6,8 +6,8 @@ const initialState = {
   cartItems: localStorage.getItem("cart")
     ? JSON.parse(localStorage.getItem("cart"))
     : [],
-  totalAmount: 0,
-  totalQTY: 0,
+  cartTotalAmount: 0,
+  cartTotalQuantity: 0,
 };
 
 const CartSlice = createSlice({
@@ -49,7 +49,7 @@ const CartSlice = createSlice({
       );
 
       if (itemIndex >= 0) {
-        state.cartItems[itemIndex].cartQuantity += 1;
+        state.cartItems[itemIndex].cartQTY += 1;
 
         toast.success(`Item Quantity Increased`);
       }
@@ -61,8 +61,8 @@ const CartSlice = createSlice({
         (item) => item.img === action.payload.img
       );
 
-      if (state.cartItems[itemIndex].cartQuantity > 1) {
-        state.cartItems[itemIndex].cartQuantity -= 1;
+      if (state.cartItems[itemIndex].cartQTY > 1) {
+        state.cartItems[itemIndex].cartQTY -= 1;
 
         toast.success(`Item Quantity Decreased`);
       }
@@ -74,6 +74,26 @@ const CartSlice = createSlice({
       toast.success(`Cart Cleared`);
       localStorage.setItem("cart", JSON.stringify(state.cartItems));
     },
+    setGetTotals: (state, action) => {
+      let { totalAmount, totalQTY } = state.cartItems.reduce(
+        (cartTotal, cartItem) => {
+          const { price, cartQTY } = cartItem;
+          const totalPrice = price * cartQTY;
+
+          cartTotal.totalAmount += totalPrice;
+          cartTotal.totalQTY += cartQTY;
+
+          return cartTotal;
+        },
+        {
+          totalAmount: 0,
+          totalQTY: 0,
+        }
+      );
+
+      state.cartTotalAmount = totalAmount;
+      state.cartTotalQuantity = totalQTY;
+    },
   },
 });
 export default CartSlice.reducer;
@@ -81,5 +101,8 @@ export const {
   setToggleCart,
   setAddItemToCart,
   setRemoveItemFromCart,
-  setIncreaseItemQTY
-,setDecreaseItemQTY,setClearCartItems} = CartSlice.actions;
+  setIncreaseItemQTY,
+  setDecreaseItemQTY,
+  setClearCartItems,
+  setGetTotals,
+} = CartSlice.actions;

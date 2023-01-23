@@ -1,15 +1,24 @@
-import { setToggleCart, setClearCartItems } from "../Features/CartSlice";
+import {
+  setToggleCart,
+  setClearCartItems,
+  setGetTotals,
+} from "../Features/CartSlice";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import CartItem from "./Utility Components/CartItem";
 
 import { Player } from "@lottiefiles/react-lottie-player";
+import { useEffect } from "react";
 function CartView() {
   const dispatch = useDispatch();
  const cartState = useSelector((state) => state.Cart.cartState);
- const totalQTY = useSelector((state) => state.Cart.totalQTY);
  const cartItems = useSelector((state) => state.Cart.cartItems);
+ const cartTotalAmount = useSelector((state) => state.Cart.cartTotalAmount);
+ const cartTotalQuantity = useSelector((state) => state.Cart.cartTotalQuantity);
  
+  useEffect(() => {
+    dispatch(setGetTotals());
+  }, [cartItems, dispatch]);
  
 
   return (
@@ -46,7 +55,7 @@ function CartView() {
               {" "}
               Your Cart{" "}
               <span className="bg-cgray text-sm rounded px-1 py-0.5">
-                ({totalQTY} Items)
+                ({cartTotalQuantity} Items)
               </span>
             </p>
           </div>
@@ -105,7 +114,7 @@ function CartView() {
             <div className="flex justify-between items-center">
               <p className="text-xl font-semibold">SUBTOTAL</p>
               <p className="blur-gray text-base font-medium px-1 rounded-md">
-                $1700
+                ${cartTotalAmount}
               </p>
             </div>
             <div className="flexCol gap-2 mt-2">
