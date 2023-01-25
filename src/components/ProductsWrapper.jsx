@@ -2,9 +2,9 @@ import Item from "./Utility Components/Item";
 import Loader from "./Utility Components/Loader";
 
 function ProductsWrapper({ pop, endpoint, isLoading, isError, error }) {
- const name = "top";
+  const name = "top";
   if (isLoading) {
-    return <Loader />
+    return <Loader />;
   }
 
   if (isError) {
@@ -16,7 +16,9 @@ function ProductsWrapper({ pop, endpoint, isLoading, isError, error }) {
   }
   return (
     <div className="w-11/12 mx-auto">
-      <h2 className="text-4xl font-bold sm:text-3xl sm:text-center">{pop ? "Popular Sales" : "Top Rated"}</h2>
+      <h2 className="text-4xl font-bold sm:text-3xl sm:text-center">
+        {pop ? "Popular Sales" : "Top Rated"}
+      </h2>
 
       <div
         className={`grid items-center justify-items-center mt-7 gap-7  ${

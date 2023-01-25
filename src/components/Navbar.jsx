@@ -5,11 +5,11 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 
 function Navbar() {
-   const dispatch = useDispatch();
-   const cartState = useSelector((state) => state.Cart.cartState);
-    const cartTotalQuantity = useSelector(
-      (state) => state.Cart.cartTotalQuantity
-    );
+  const dispatch = useDispatch();
+  const cartState = useSelector((state) => state.Cart.cartState);
+  const cartTotalQuantity = useSelector(
+    (state) => state.Cart.cartTotalQuantity
+  );
 
   const [scroll, setScroll] = useState(false);
   const [toggle, setToggle] = useState(false);
@@ -26,11 +26,12 @@ function Navbar() {
   const navBackground = scroll ? "blur" : "";
   const toggleStyle = toggle ? "sm:block" : "";
   const activeLink = ({ isActive }) => ({
-    background: isActive? 
-      "linear-gradient(94deg, rgba(9,57,89,1) 0%, rgba(183,226,247,1) 100%)" : "",
-    backgroundSize: isActive?  "100% 3px" : "",
-    backgroundRepeat:  isActive? "no-repeat" : "",
-    backgroundPosition: isActive?  "left bottom" : "",
+    background: isActive
+      ? "linear-gradient(94deg, rgba(9,57,89,1) 0%, rgba(183,226,247,1) 100%)"
+      : "",
+    backgroundSize: isActive ? "100% 3px" : "",
+    backgroundRepeat: isActive ? "no-repeat" : "",
+    backgroundPosition: isActive ? "left bottom" : "",
   });
 
   return (
@@ -166,7 +167,7 @@ function Navbar() {
             <img src="../assets/cart.svg" alt="" />
           </button>
           <div className="text-cgray bg-cblue flex items-center justify-center rounded-full text-xs shadow-sm shadow-cgray absolute bottom-[26px] left-[4px] px-[4px] cursor-pointer  ">
-            {cartTotalQuantity }
+            {cartTotalQuantity}
           </div>
         </div>
       </div>

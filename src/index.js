@@ -1,17 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import {Provider} from "react-redux";
-import {Store} from  "./App/Store"
+import { Provider } from "react-redux";
+import { Store } from "./App/Store";
 import { Toaster } from "react-hot-toast";
 
-
- const client = new QueryClient({
-    
-  });
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const client = new QueryClient({});
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <QueryClientProvider client={client}>
@@ -23,4 +20,3 @@ root.render(
     </QueryClientProvider>
   </React.StrictMode>
 );
-

@@ -6,20 +6,22 @@ import {
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import CartItem from "./Utility Components/CartItem";
-
+import { useNavigate } from "react-router-dom";
 import { Player } from "@lottiefiles/react-lottie-player";
 import { useEffect } from "react";
 function CartView() {
   const dispatch = useDispatch();
- const cartState = useSelector((state) => state.Cart.cartState);
- const cartItems = useSelector((state) => state.Cart.cartItems);
- const cartTotalAmount = useSelector((state) => state.Cart.cartTotalAmount);
- const cartTotalQuantity = useSelector((state) => state.Cart.cartTotalQuantity);
- 
+  const cartState = useSelector((state) => state.Cart.cartState);
+  const cartItems = useSelector((state) => state.Cart.cartItems);
+  const cartTotalAmount = useSelector((state) => state.Cart.cartTotalAmount);
+  const cartTotalQuantity = useSelector(
+    (state) => state.Cart.cartTotalQuantity
+  );
+
   useEffect(() => {
     dispatch(setGetTotals());
   }, [cartItems, dispatch]);
- 
+  const navigate = useNavigate();
 
   return (
     <section
@@ -100,16 +102,12 @@ function CartView() {
               </div>
             </button>
           </div>
-        ) : (
-          <div className="px-4  ">
+        ) : (<>
+          <div className="px-4 min-h-screen  ">
             {cartItems?.map((item, i) => (
-              <CartItem item={item} key={i} />
+              <CartItem item={item} pop key={i} />
             ))}
           </div>
-        )}
-        {cartItems?.length === 0 ? (
-          ""
-        ) : (
           <div className=" w-full h-auto bg-csky sticky bottom-0  right-0 px-3 py-3 z-[100] ">
             <div className="flex justify-between items-center">
               <p className="text-xl font-semibold">SUBTOTAL</p>
@@ -119,7 +117,10 @@ function CartView() {
             </div>
             <div className="flexCol gap-2 mt-2">
               <p>Taxes and Shipping Will be Calculated At Shipping</p>
-              <button className="c-button c-button--gooey ">
+              <button
+                onClick={() => navigate("/checkout")}
+                className="c-button c-button--gooey "
+              >
                 {" "}
                 Checkout{" "}
                 <div className="c-button__blobs">
@@ -152,7 +153,9 @@ function CartView() {
               </svg>
             </div>
           </div>
+          </>
         )}
+        
       </div>
     </section>
   );

@@ -9,8 +9,12 @@ function UnderConstruction() {
         loop
         autoplay
       />
-      <h1 className="text-4xl font-bold font-Anton text-center">Under Construction</h1>
-      <h2 className="text-2xl text-center mt-3">We're Currently Working on this Page</h2>
+      <h1 className="text-4xl font-bold font-Anton text-center">
+        Under Construction
+      </h1>
+      <h2 className="text-2xl text-center mt-3">
+        We're Currently Working on this Page
+      </h2>
     </div>
   );
 }

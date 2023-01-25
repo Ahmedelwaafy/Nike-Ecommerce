@@ -319,6 +319,8 @@
     gap: 100px;
   }
 
+
+
   .flexCol {
     display: flex;
     flex-direction: column;
@@ -380,8 +382,41 @@
     transform: translateY(-50%);
   }
 
-  /** Custom Radio Button */
+  /** Checkout Radio Button */
 
+  .rowwrapper {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+  }
+ 
+  .rowwrapper .option {
+    background: rgba(197, 197, 197, 0.527);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.5s ease;
+  }
+ 
+  input#online:checked ~ .option-1,
+  input#cash:checked ~ .option-2 {
+    background: #093959;
+  }
+  input#online:hover ~ .option-1,
+  input#cash:hover ~ .option-2 {
+    background: #b7e2f7;
+  }
+
+  input#online:checked ~ .option-1 span,
+  input#cash:checked ~ .option-2 span {
+    color: #edf3f8;
+  }
+
+  /** Filter Radio Button*/
   .wrapper {
     display: flex;
     flex-direction: column;

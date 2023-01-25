@@ -31,10 +31,10 @@ function Items({ searchShoe, name }) {
     }
     fetchData();
   }, [page, name]);
-const ItemsFilterdByQuery = FilterByQuery(data, searchShoe.get("search"));
-const ItemsSortedByPrice = SortByPrice(ItemsFilterdByQuery, sort);
-const ItemsSortedBySize = SortBySize(ItemsSortedByPrice, size);
-const ItemsSortedByColor = SortByColor(ItemsSortedBySize, color);
+  const ItemsFilterdByQuery = FilterByQuery(data, searchShoe.get("search"));
+  const ItemsSortedByPrice = SortByPrice(ItemsFilterdByQuery, sort);
+  const ItemsSortedBySize = SortBySize(ItemsSortedByPrice, size);
+  const ItemsSortedByColor = SortByColor(ItemsSortedBySize, color);
 
   if (loading) {
     return <Loader />;

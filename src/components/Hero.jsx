@@ -5,7 +5,7 @@ function Hero() {
   const [src, setSrc] = useState("");
 
   return (
-    <section  className="h-[100vh] ">
+    <section className="h-[100vh] ">
       {/**Clip Path */}
       <div className="top-0 absolute bg-csky z-[-1] clip-path  w-full h-full"></div>
 

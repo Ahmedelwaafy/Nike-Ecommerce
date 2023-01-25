@@ -21,8 +21,10 @@ function Highlights() {
           Our Purpose is to move the world forward. We take action by building
           community, protecting our planet and increasing access to sport.
         </p>
-        <button className="text-cgray bg-light-brown px-3  py-2 rounded-sm active:scale-90 transition-all duration-100 ease-in-out hover:bg-brown  shadow-sm  shadow-light-brown hover:shadow-brown md:text-sm"
-        onClick={()=> navigate("/collections")} >
+        <button
+          className="text-cgray bg-light-brown px-3  py-2 rounded-sm active:scale-90 transition-all duration-100 ease-in-out hover:bg-brown  shadow-sm  shadow-light-brown hover:shadow-brown md:text-sm"
+          onClick={() => navigate("/collections")}
+        >
           Explore More
         </button>
       </div>
@@ -30,4 +32,4 @@ function Highlights() {
   );
 }
 
-export default Highlights
+export default Highlights;

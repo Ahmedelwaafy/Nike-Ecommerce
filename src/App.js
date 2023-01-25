@@ -5,12 +5,11 @@ import Missing from "./components/Utility Components/Missing";
 import ItemPage from "./components/Utility Components/ItemPage";
 import UnderConstruction from "./components/Utility Components/UnderConstruction";
 import Loading from "./components/Utility Components/Loading";
-import Home from "./components/Home";
+import Checkout from "./components/Checkout";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
-  useNavigate,
 } from "react-router-dom";
 import { lazy, Suspense } from "react";
 
@@ -81,7 +80,7 @@ function App() {
         </Route>
 
         <Route path="*" element={<Missing />} />
-        <Route path="/home" element={<Home />} />
+        <Route path="/checkout" element={<Checkout />} />
       </Routes>
     </Router>
   );

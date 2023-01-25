@@ -38,8 +38,7 @@ function Stories({ stories, isLoading, isError, error }) {
       <h2 className="text-4xl font-bold sm:text-center md:text-2xl ">
         Top Stories
       </h2>
-      
-      
+
       <div className="mt-7">
         <Splide options={splideOptions}>
           {stories.map((story, i) => (

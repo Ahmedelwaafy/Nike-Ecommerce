@@ -1,4 +1,3 @@
-
 function Loader() {
   return (
     <div className="loader">
@@ -13,4 +12,4 @@ function Loader() {
   );
 }
 
-export default Loader
+export default Loader;

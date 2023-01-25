@@ -5,9 +5,9 @@ import {
 } from "../../Features/CartSlice";
 import { useDispatch } from "react-redux";
 
-function CartItem({ item }) {
+function CartItem({ item, pop }) {
   const dispatch = useDispatch();
-  const { id, title, text, img, color, shadow, price, cartQTY } = item;
+  const { title, text, img, color, shadow, price, cartQTY } = item;
   return (
     <div className="flex items-center justify-between gap-4 my-8 ">
       <div
@@ -48,13 +48,15 @@ function CartItem({ item }) {
         </div>
 
         <div className="flexCol gap-9">
-          <p className=" text-lg font-semibold">$ {price * cartQTY}</p>
-          <img
-            onClick={() => dispatch(setRemoveItemFromCart(item))}
-            src="../assets/remove.svg"
-            alt="remove"
-            className="bg-red-500 px-2 py-2 rounded-md cursor-pointer active:scale-90 transition duration-300 "
-          />
+          <p className=" text-lg font-semibold">${price * cartQTY}</p>
+          {pop && (
+            <img
+              onClick={() => dispatch(setRemoveItemFromCart(item))}
+              src="../assets/remove.svg"
+              alt="remove"
+              className="bg-red-500 px-2 py-2 rounded-md cursor-pointer active:scale-90 transition duration-300 "
+            />
+          )}
         </div>
       </div>
     </div>

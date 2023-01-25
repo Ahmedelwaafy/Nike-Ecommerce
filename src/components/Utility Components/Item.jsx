@@ -5,8 +5,7 @@ import { useSelector } from "react-redux";
 
 function Item({ item, pop, name }) {
   const dispatch = useDispatch();
- const cartState = useSelector((state) => state.Cart.cartState);
-
+  const cartState = useSelector((state) => state.Cart.cartState);
   const { title, text, rating, btn, img, price, color, shadow, id } = item;
 
   return (

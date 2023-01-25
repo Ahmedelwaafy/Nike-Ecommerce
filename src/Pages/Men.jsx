@@ -101,7 +101,7 @@ function Men() {
           <FilterView />
         </aside>
       </div>
-      <section className="     flex w-full justify-end gap-16">
+      <section className="   min-h-screen  flex w-full justify-end gap-16">
         <div className="w-5/6 px-10 ss:px-12  pt-12 ">
           <Items searchShoe={searchShoe} name={name} />
         </div>

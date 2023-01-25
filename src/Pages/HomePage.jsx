@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import Hero from "../components/Hero";
@@ -7,6 +6,7 @@ import ProductsWrapper from "../components/ProductsWrapper";
 import Highlights from "../components/Highlights";
 import Featured from "../components/Featured";
 import Stories from "../components/Stories";
+
 function HomePage() {
   const [popular, setPopular] = useState([]);
   const [top, setTop] = useState([]);
@@ -23,13 +23,11 @@ function HomePage() {
       //refetchOnMount: true,
       refetchOnWindowFocus: false,
       onSuccess: (data) => {
-        
-      const { popular, top, Stories } =
-        data;
-      setPopular(popular);
-      setTop(top);
-    
-      setStories(Stories);
+        const { popular, top, Stories } = data;
+        setPopular(popular);
+        setTop(top);
+
+        setStories(Stories);
       },
       //staleTime: Infinity,
       // keepPreviousData: true,

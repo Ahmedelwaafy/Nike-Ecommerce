@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
- 
+
 function Footer() {
-      const navigate = useNavigate();
+  const navigate = useNavigate();
 
   return (
     <footer className="mt-24 py-10  bg-csky  ">
@@ -10,27 +10,27 @@ function Footer() {
           <h3 className=" mb-3 font-bold text-lg">ABOUT NIKE</h3>
           <ul className="leading-10">
             <li>
-              <button  onClick={() => navigate("/underconstruction")}>
+              <button onClick={() => navigate("/underconstruction")}>
                 News
               </button>
             </li>
             <li>
-              <button  onClick={() => navigate("/underconstruction")}>
+              <button onClick={() => navigate("/underconstruction")}>
                 Sustainability
               </button>
             </li>
             <li>
-              <button  onClick={() => navigate("/underconstruction")}>
+              <button onClick={() => navigate("/underconstruction")}>
                 Careers
               </button>
             </li>
             <li>
-              <button  onClick={() => navigate("/underconstruction")}>
+              <button onClick={() => navigate("/underconstruction")}>
                 Investors
               </button>
             </li>
             <li>
-              <button  onClick={() => navigate("/underconstruction")}>
+              <button onClick={() => navigate("/underconstruction")}>
                 Prupose
               </button>
             </li>
@@ -41,27 +41,27 @@ function Footer() {
           <h3 className=" mb-3 font-bold text-lg">GET HELP</h3>
           <ul className="leading-10">
             <li>
-              <button  onClick={() => navigate("/underconstruction")}>
+              <button onClick={() => navigate("/underconstruction")}>
                 Order Status
               </button>
             </li>
             <li>
-              <button  onClick={() => navigate("/underconstruction")}>
+              <button onClick={() => navigate("/underconstruction")}>
                 Shipping & Delivery
               </button>
             </li>
             <li>
-              <button  onClick={() => navigate("/underconstruction")}>
+              <button onClick={() => navigate("/underconstruction")}>
                 FAQ
               </button>
             </li>
             <li>
-              <button  onClick={() => navigate("/underconstruction")}>
+              <button onClick={() => navigate("/underconstruction")}>
                 Payment Options
               </button>
             </li>
             <li>
-              <button  onClick={() => navigate("/underconstruction")}>
+              <button onClick={() => navigate("/underconstruction")}>
                 Contact Us
               </button>
             </li>
@@ -72,27 +72,27 @@ function Footer() {
           <h3 className=" mb-3 font-bold text-lg">COMPANY</h3>
           <ul className="leading-10">
             <li>
-              <button  onClick={() => navigate("/underconstruction")}>
+              <button onClick={() => navigate("/underconstruction")}>
                 Gift Cards
               </button>
             </li>
             <li>
-              <button  onClick={() => navigate("/underconstruction")}>
+              <button onClick={() => navigate("/underconstruction")}>
                 Promotions
               </button>
             </li>
             <li>
-              <button  onClick={() => navigate("/underconstruction")}>
+              <button onClick={() => navigate("/underconstruction")}>
                 Find A Store
               </button>
             </li>
             <li>
-              <button  onClick={() => navigate("/underconstruction")}>
+              <button onClick={() => navigate("/underconstruction")}>
                 Signup
               </button>
             </li>
             <li>
-              <button  onClick={() => navigate("/underconstruction")}>
+              <button onClick={() => navigate("/underconstruction")}>
                 Send Us Feeback
               </button>
             </li>

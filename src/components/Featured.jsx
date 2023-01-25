@@ -1,7 +1,5 @@
 import { useNavigate } from "react-router-dom";
 
-
-
 function Featured({ stories }) {
   const navigate = useNavigate();
   console.log(stories);
@@ -32,8 +30,6 @@ function Featured({ stories }) {
         src="../assets/box.png"
         alt="box"
       />
-
-      
     </section>
   );
 }

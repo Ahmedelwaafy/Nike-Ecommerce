@@ -27,10 +27,9 @@ const FilterSlice = createSlice({
         : [];
     },
     reset: (state, action) => {
-      state.sort =""
-      state.size =[]
-      state.color =[]
-       
+      state.sort = "";
+      state.size = [];
+      state.color = [];
     },
   },
 });

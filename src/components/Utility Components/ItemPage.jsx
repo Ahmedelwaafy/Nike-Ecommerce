@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom"
+import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
@@ -6,27 +6,26 @@ import { setAddItemToCart, setToggleCart } from "../../Features/CartSlice";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 
+function ItemPage({ type }) {
+  const dispatch = useDispatch();
+  const cartState = useSelector((state) => state.Cart.cartState);
 
-function ItemPage({type}) {
-      const dispatch = useDispatch();
- const cartState = useSelector((state) => state.Cart.cartState);
-
-    const [data, setData] = useState({});
-    const [flip, setFlip] = useState("");
+  const [data, setData] = useState({});
+  const [flip, setFlip] = useState("");
 
   const { id } = useParams();
-  
- useEffect(() => {
-   async function fetchData() {
-     const res = await axios.get(
-       `https://nike-api-render.onrender.com/${type}/${id}`
-     );
-     setData(res.data);
 
-     return res.data;
-   }
-   fetchData();
- }, [id, type]);
+  useEffect(() => {
+    async function fetchData() {
+      const res = await axios.get(
+        `https://nike-api-render.onrender.com/${type}/${id}`
+      );
+      setData(res.data);
+
+      return res.data;
+    }
+    fetchData();
+  }, [id, type]);
   return (
     <div className="my-[78px] h-[80vh] sm:h-auto w-5/6 mx-auto flex sm:flex-col sm:items-center gap-12 pt-16">
       <div className="w-3/5 sm:w-full sm:order-2 img-col ">
@@ -98,4 +97,4 @@ function ItemPage({type}) {
   );
 }
 
-export default ItemPage
+export default ItemPage;

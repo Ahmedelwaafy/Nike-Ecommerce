@@ -1,12 +1,12 @@
-import { sort, size, color,reset } from "../../Features/FilterSlice";
+import { sort, size, color, reset } from "../../Features/FilterSlice";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 
 function FilterView() {
   const dispatch = useDispatch();
- const sorted = useSelector((state) => state.Filter.sort);
- const sized = useSelector((state) => state.Filter.size);
- const colored = useSelector((state) => state.Filter.color);
+  const sorted = useSelector((state) => state.Filter.sort);
+  const sized = useSelector((state) => state.Filter.size);
+  const colored = useSelector((state) => state.Filter.color);
 
   return (
     <div>
