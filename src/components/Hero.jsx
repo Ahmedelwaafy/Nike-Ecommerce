@@ -1,6 +1,9 @@
 import { useState } from "react";
-
+import { setAddItemToCart } from "../Features/CartSlice";
+import { useDispatch } from "react-redux";
 function Hero() {
+    const dispatch = useDispatch();
+
   const [show, setShow] = useState(false);
   const [src, setSrc] = useState("");
 
@@ -35,12 +38,30 @@ function Hero() {
             </p>
           </div>
           <div className="flex gap-8 items-center md:mt-0 my-3 sm:my-3 ">
-            <a
-              href="#hero"
-              className="bg-cblue text-cgray font-bold px-7 py-3 sm:text-sm sm:px-5 rounded-sm active:scale-90 transition-all duration-100 ease-in-out hover:bg-hover shadow-sm  shadow-cblue "
+            <button
+              onClick={() =>
+                dispatch(
+                  setAddItemToCart({
+                    id: "26",
+                    title: "Sneakers Dynamic Fit",
+                    text: "MEN Running Shoes",
+                    rating: "4.3",
+                    btn: "Buy Now",
+                    img: "../assets/men/Sneakers Dynamic Fit.png",
+                    size: "s",
+                    shoeColor: "Blue",
+                    price: "140",
+                    shadow: "#2dd4bf",
+                    color: "linear-gradient(135deg,#00F5A0 0%,#00D9F5 100%)",
+                  })
+                )
+              }
+              className="herobutton ss:py-1 ss:px-2"
             >
-              Add To Bag
-            </a>
+              <img src="../assets/heroShoe.svg" alt="heroShoe" />
+              <span class="ToCart">To Cart</span>
+              <span class="Add">Add</span>
+            </button>
             <p className="  font-bold ">$149.99</p>
           </div>
         </div>

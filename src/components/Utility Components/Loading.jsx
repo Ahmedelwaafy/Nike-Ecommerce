@@ -1,6 +1,6 @@
 function Loading() {
   return (
-    <div>
+    <div className="flex justify-center items-center h-screen w-full">
       <div className="Loadingwrapper">
         <div className="circle"></div>
         <div className="circle"></div>
