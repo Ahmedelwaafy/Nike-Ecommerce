@@ -1,7 +1,7 @@
 function Loading() {
   return (
     <div>
-      <div className="wrapper">
+      <div className="Loadingwrapper">
         <div className="circle"></div>
         <div className="circle"></div>
         <div className="circle"></div>

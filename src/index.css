@@ -81,7 +81,7 @@
     background-position: left bottom;
   }
 
-  /**loader*/
+  /**loader for Items Page*/
   .loader {
     position: relative;
     width: 240px;
@@ -111,13 +111,13 @@
     animation: gradient-animation_2 1.2s linear infinite;
   }
 
-  .loader .wrapper {
+  .loader .loaderwrapper {
     width: 100%;
     height: 100%;
     position: relative;
   }
 
-  .loader .wrapper > div {
+  .loader .loaderwrapper > div {
     background-color: #cacaca;
   }
 
@@ -177,7 +177,7 @@
 
   /**Loading*/
 
-  .wrapper {
+  .Loadingwrapper {
     width: 200px;
     height: 60px;
     position: relative;

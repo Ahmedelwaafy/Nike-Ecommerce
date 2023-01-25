@@ -1,7 +1,7 @@
 function Loader() {
   return (
     <div className="loader">
-      <div className="wrapper">
+      <div className="loaderwrapper">
         <div className="lcircle"></div>
         <div className="line-1"></div>
         <div className="line-2"></div>
