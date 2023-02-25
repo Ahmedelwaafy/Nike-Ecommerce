@@ -110,6 +110,6 @@ npm install json-serve
 
 > Other web hosting services will work like Vercel, Netlify, Railway...etc.
 
-###### Animation by [Domingo]( https://dribbble.com/shots/18555670-Here-is-my-ID-sir)
+###### Animation by [Oto Motion]( https://dribbble.com/shots/20632590-NIKE-LOGO-ANIMATION)
 
 Thanx for watching.
