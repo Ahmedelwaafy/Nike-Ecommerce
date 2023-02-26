@@ -6,7 +6,7 @@
 
 # Nike E-Commerce 
 
-## _It is a Fully Responsive Ecommerce Website, A Re-Design for Nike, With Multiple Products Pages, for Women, Men Kids, and Collections, And Nice Animations._
+## _It is a Fully Responsive Ecommerce Website, A Re-Design for Nike, With Multiple Products Pages, for Women, Men, Kids, and Collections, And Nice Animations._
 <br />
 
 ## Features
