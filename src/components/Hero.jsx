@@ -186,7 +186,7 @@ function Hero() {
         {show && (
           <div
             onClick={() => setShow(!show)}
-            className="absolute top-0 right-0  flex justify-center items-center w-full h-full z-0  overlay "
+            className="absolute top-0 right-0  flex justify-center items-center w-full h-full  overlay "
           >
             <video
               id="my-video"
