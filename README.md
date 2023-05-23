@@ -102,7 +102,7 @@ npm install json-serve
 
 7-Add a certain logic to the index.js file, you can get this logic from  [here](https://github.com/Ahmedelwaafy/Nike-API).
 
-8-Add your JSON data to the dp.json file.
+8-Add your JSON data to the dp.json file, and run the npm run start script
 
 9-Add, commit and push the changes.
 
@@ -113,3 +113,5 @@ npm install json-serve
 ###### Animation by [Oto Motion]( https://dribbble.com/shots/20632590-NIKE-LOGO-ANIMATION)
 
 Thanx for watching.
+z
+
