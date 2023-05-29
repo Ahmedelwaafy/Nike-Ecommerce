@@ -70,7 +70,7 @@ Here are some online tools i used to facilitate doing this project.
 
 ## API Creating
 
-I've Created the API with JSON Server and Hosted Online on Render>com with Aid of node.js.
+I've Created the API with JSON Server and Hosted Online on Render.com with Aid of node.js.
 
 Steps:
 
